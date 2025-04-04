@@ -1,0 +1,51 @@
+Namespace(arch='resnet50', batch_size=32, bottleneck_dim=256, data='Office31', epochs=1, iters_per_epoch=1000, log='dann', lr=0.01, lr_decay=0.75, lr_gamma=0.001, momentum=0.9, no_hflip=False, no_pool=False, norm_mean=(0.485, 0.456, 0.406), norm_std=(0.229, 0.224, 0.225), per_class_eval=False, phase='train', print_freq=100, ratio=[0.75, 1.3333333333333333], resize_size=224, root='data/office31', scale=[0.08, 1.0], scratch=False, seed=None, source=['A'], target=['W'], trade_off=1.0, train_resizing='default', val_resizing='default', weight_decay=0.001, workers=2)
+train_transform:  Compose(
+    Compose(
+    ResizeImage(size=(256, 256))
+    RandomResizedCrop(size=(224, 224), scale=(0.08, 1.0), ratio=(0.75, 1.3333), interpolation=bilinear), antialias=None)
+)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))
+)
+val_transform:  Compose(
+    Compose(
+    ResizeImage(size=(256, 256))
+    CenterCrop(size=(224, 224))
+)
+    ToTensor()
+    Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))
+)
+=> using model 'resnet50'
+/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torchvision/models/_utils.py:252: UserWarning: Accessing the model URLs via the internal dictionary of the module is deprecated since 0.13 and may be removed in the future. Please access them via the appropriate Weights Enum instead.
+  warnings.warn(
+lr: 0.001
+Epoch: [0][   0/1000]	Time  3.04 ( 3.04)	Data  0.02 ( 0.02)	Loss   4.22 (  4.22)	Cls Acc 0.0 (0.0)	Domain Acc 57.8 (57.8)
+Traceback (most recent call last):
+  File "dann.py", line 266, in <module>
+    main(args)
+  File "dann.py", line 116, in main
+    train(train_source_iter, train_target_iter, classifier, domain_adv, optimizer,
+  File "dann.py", line 169, in train
+    y, f = model(x)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/tllib-0.4-py3.8.egg/tllib/modules/classifier.py", line 80, in forward
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/tllib-0.4-py3.8.egg/tllib/vision/models/resnet.py", line 35, in forward
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torchvision/models/resnet.py", line 146, in forward
+    out = self.conv1(x)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+KeyboardInterrupt

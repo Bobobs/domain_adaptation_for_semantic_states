@@ -1,0 +1,392 @@
+Namespace(arch='convnext_base', batch_size=32, bottleneck_dim=256, data='Office31', epochs=20, iters_per_epoch=1000, log='bsp', lr=0.003, lr_decay=0.75, lr_gamma=0.001, momentum=0.9, no_hflip=False, no_pool=False, norm_mean=(0.485, 0.456, 0.406), norm_std=(0.229, 0.224, 0.225), per_class_eval=False, phase='train', pretrain=None, pretrain_epochs=3, pretrain_lr=0.001, print_freq=100, ratio=[0.75, 1.3333333333333333], resize_size=224, root='data/office31', scale=[0.08, 1.0], scratch=False, seed=None, source=['A'], target=['W'], trade_off=1.0, trade_off_bsp=0.0002, train_resizing='default', val_resizing='default', weight_decay=0.001, workers=2)
+=> using model 'convnext_base'
+Pretraining the model on source domain.
+/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:257: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+lr: [0.0001, 0.001, 0.001]
+Epoch: [0][   0/1000]	Time 3.3 (3.3)	Data 0.0 (0.0)	Loss 2.29 (2.29)	Cls Acc 9.4 (9.4)
+Epoch: [0][ 100/1000]	Time 1.1 (0.8)	Data 0.5 (0.2)	Loss 1.23 (1.60)	Cls Acc 56.2 (45.3)
+Epoch: [0][ 200/1000]	Time 0.9 (0.8)	Data 0.3 (0.2)	Loss 0.94 (1.34)	Cls Acc 75.0 (54.6)
+Epoch: [0][ 300/1000]	Time 1.1 (0.8)	Data 0.6 (0.3)	Loss 0.82 (1.21)	Cls Acc 71.9 (58.5)
+Epoch: [0][ 400/1000]	Time 0.9 (0.8)	Data 0.4 (0.3)	Loss 0.78 (1.12)	Cls Acc 65.6 (61.5)
+Epoch: [0][ 500/1000]	Time 1.0 (0.8)	Data 0.4 (0.2)	Loss 0.65 (1.06)	Cls Acc 75.0 (63.7)
+Epoch: [0][ 600/1000]	Time 1.2 (0.8)	Data 0.7 (0.3)	Loss 0.47 (1.01)	Cls Acc 87.5 (65.4)
+Epoch: [0][ 700/1000]	Time 1.0 (0.8)	Data 0.5 (0.3)	Loss 0.70 (0.97)	Cls Acc 78.1 (66.6)
+Epoch: [0][ 800/1000]	Time 1.1 (0.8)	Data 0.6 (0.3)	Loss 0.80 (0.94)	Cls Acc 81.2 (67.7)
+Epoch: [0][ 900/1000]	Time 1.0 (0.8)	Data 0.5 (0.3)	Loss 0.55 (0.91)	Cls Acc 84.4 (68.5)
+/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py:136: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  top2, predicted2 = torch.topk(sm(output.data), 2, dim=1, largest=True, sorted=True)
+/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py:137: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  top3, predicted3 = torch.topk(sm(output.data), 3, dim=1, largest=True, sorted=True)
+/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py:138: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  top9, predicted9 = torch.topk(sm(output.data), 9, dim=1, largest=True, sorted=True)
+Test: [  0/295]	Time  1.337 ( 1.337)	Loss 4.6451e-01 (4.6451e-01)	Acc@1  87.50 ( 87.50)
+Test: [100/295]	Time  0.493 ( 0.430)	Loss 3.3278e-01 (3.5518e-01)	Acc@1  93.75 ( 90.97)
+Test: [200/295]	Time  0.828 ( 0.429)	Loss 3.5593e-01 (3.4840e-01)	Acc@1  87.50 ( 91.48)
+ * Acc@1 91.541
+lr: [5.946035575013605e-05, 0.0005946035575013605, 0.0005946035575013605]
+Epoch: [1][   0/1000]	Time 0.6 (0.6)	Data 0.0 (0.0)	Loss 0.56 (0.56)	Cls Acc 87.5 (87.5)
+Epoch: [1][ 100/1000]	Time 0.6 (0.8)	Data 0.0 (0.2)	Loss 0.65 (0.67)	Cls Acc 78.1 (76.2)
+Epoch: [1][ 200/1000]	Time 1.0 (0.8)	Data 0.4 (0.2)	Loss 0.51 (0.65)	Cls Acc 87.5 (76.8)
+Epoch: [1][ 300/1000]	Time 0.9 (0.8)	Data 0.4 (0.3)	Loss 0.48 (0.64)	Cls Acc 84.4 (76.9)
+Epoch: [1][ 400/1000]	Time 0.9 (0.8)	Data 0.3 (0.3)	Loss 0.50 (0.64)	Cls Acc 84.4 (76.9)
+Epoch: [1][ 500/1000]	Time 1.1 (0.8)	Data 0.5 (0.3)	Loss 0.91 (0.64)	Cls Acc 78.1 (77.1)
+Epoch: [1][ 600/1000]	Time 0.6 (0.8)	Data 0.0 (0.3)	Loss 0.57 (0.64)	Cls Acc 78.1 (77.2)
+Epoch: [1][ 700/1000]	Time 0.6 (0.8)	Data 0.0 (0.2)	Loss 0.61 (0.63)	Cls Acc 81.2 (77.4)
+Epoch: [1][ 800/1000]	Time 0.7 (0.8)	Data 0.2 (0.2)	Loss 0.52 (0.63)	Cls Acc 78.1 (77.4)
+Epoch: [1][ 900/1000]	Time 0.6 (0.8)	Data 0.0 (0.2)	Loss 0.56 (0.63)	Cls Acc 71.9 (77.4)
+Test: [  0/295]	Time  1.080 ( 1.080)	Loss 2.7432e-01 (2.7432e-01)	Acc@1  93.75 ( 93.75)
+Test: [100/295]	Time  0.335 ( 0.423)	Loss 2.7238e-01 (2.6781e-01)	Acc@1  87.50 ( 93.81)
+Test: [200/295]	Time  0.180 ( 0.418)	Loss 2.9970e-01 (2.6950e-01)	Acc@1  87.50 ( 94.12)
+ * Acc@1 94.283
+lr: [4.3869133765083086e-05, 0.0004386913376508308, 0.0004386913376508308]
+Epoch: [2][   0/1000]	Time 0.6 (0.6)	Data 0.0 (0.0)	Loss 0.60 (0.60)	Cls Acc 81.2 (81.2)
+Epoch: [2][ 100/1000]	Time 0.6 (0.7)	Data 0.0 (0.2)	Loss 0.72 (0.59)	Cls Acc 65.6 (78.6)
+Epoch: [2][ 200/1000]	Time 0.6 (0.8)	Data 0.0 (0.2)	Loss 0.57 (0.58)	Cls Acc 81.2 (79.0)
+Epoch: [2][ 300/1000]	Time 0.6 (0.8)	Data 0.0 (0.2)	Loss 0.42 (0.58)	Cls Acc 87.5 (79.0)
+Epoch: [2][ 400/1000]	Time 1.1 (0.8)	Data 0.6 (0.3)	Loss 0.51 (0.57)	Cls Acc 78.1 (79.1)
+Epoch: [2][ 500/1000]	Time 0.9 (0.8)	Data 0.3 (0.3)	Loss 0.55 (0.58)	Cls Acc 71.9 (79.0)
+Epoch: [2][ 600/1000]	Time 1.1 (0.8)	Data 0.5 (0.2)	Loss 0.77 (0.57)	Cls Acc 71.9 (79.0)
+Epoch: [2][ 700/1000]	Time 1.1 (0.8)	Data 0.6 (0.2)	Loss 0.62 (0.57)	Cls Acc 75.0 (79.0)
+Epoch: [2][ 800/1000]	Time 0.6 (0.8)	Data 0.0 (0.3)	Loss 0.58 (0.58)	Cls Acc 84.4 (79.0)
+Epoch: [2][ 900/1000]	Time 0.6 (0.8)	Data 0.0 (0.2)	Loss 0.58 (0.57)	Cls Acc 81.2 (79.0)
+Test: [  0/295]	Time  0.963 ( 0.963)	Loss 2.4947e-01 (2.4947e-01)	Acc@1  93.75 ( 93.75)
+Test: [100/295]	Time  0.548 ( 0.418)	Loss 2.8403e-01 (2.4070e-01)	Acc@1  87.50 ( 94.43)
+Test: [200/295]	Time  0.118 ( 0.409)	Loss 2.6106e-01 (2.4165e-01)	Acc@1  81.25 ( 94.53)
+ * Acc@1 94.516
+Pretraining process is done.
+after pretraining lr: 0.00030000000000000003
+Epoch: [0][   0/1000]	Time  3.61 ( 3.61)	Data  0.09 ( 0.09)	Loss   1.83 (  1.83)	Cls Acc 87.5 (87.5)	Domain Acc 42.2 (42.2)
+Epoch: [0][ 100/1000]	Time  1.24 ( 1.26)	Data  0.02 ( 0.02)	Loss   1.45 (  1.54)	Cls Acc 84.4 (77.4)	Domain Acc 85.9 (85.2)
+Epoch: [0][ 200/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.34 (  1.42)	Cls Acc 71.9 (77.7)	Domain Acc 85.9 (89.0)
+Epoch: [0][ 300/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   0.96 (  1.35)	Cls Acc 84.4 (77.8)	Domain Acc 98.4 (90.9)
+Epoch: [0][ 400/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.35 (  1.34)	Cls Acc 90.6 (78.1)	Domain Acc 81.2 (90.1)
+Epoch: [0][ 500/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   2.19 (  1.49)	Cls Acc 81.2 (78.0)	Domain Acc 60.9 (85.5)
+Epoch: [0][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   2.09 (  1.52)	Cls Acc 71.9 (78.1)	Domain Acc 71.9 (83.5)
+Epoch: [0][ 700/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.78 (  1.53)	Cls Acc 65.6 (78.1)	Domain Acc 60.9 (81.6)
+Epoch: [0][ 800/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.68 (  1.54)	Cls Acc 75.0 (78.1)	Domain Acc 62.5 (80.1)
+Epoch: [0][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.86 (  1.54)	Cls Acc 75.0 (78.1)	Domain Acc 56.2 (79.0)
+Test: [  0/295]	Time  1.095 ( 1.095)	Loss 3.7164e-01 (3.7164e-01)	Acc@1  87.50 ( 87.50)
+Test: [100/295]	Time  0.118 ( 0.433)	Loss 4.3054e-01 (3.2225e-01)	Acc@1  87.50 ( 94.25)
+Test: [200/295]	Time  0.116 ( 0.429)	Loss 2.9050e-01 (3.2377e-01)	Acc@1  93.75 ( 94.50)
+ * Acc@1 94.304
+after pretraining lr: 0.00017838106725040818
+Epoch: [1][   0/1000]	Time  1.22 ( 1.22)	Data  0.02 ( 0.02)	Loss   1.90 (  1.90)	Cls Acc 78.1 (78.1)	Domain Acc 45.3 (45.3)
+Epoch: [1][ 100/1000]	Time  1.24 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.93 (  1.60)	Cls Acc 78.1 (76.9)	Domain Acc 48.4 (66.2)
+Epoch: [1][ 200/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.73 (  1.62)	Cls Acc 75.0 (78.0)	Domain Acc 60.9 (64.7)
+Epoch: [1][ 300/1000]	Time  1.23 ( 1.25)	Data  0.02 ( 0.03)	Loss   2.07 (  1.66)	Cls Acc 84.4 (77.9)	Domain Acc 40.6 (62.8)
+Epoch: [1][ 400/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.55 (  1.67)	Cls Acc 87.5 (77.8)	Domain Acc 42.2 (61.8)
+Epoch: [1][ 500/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.57 (  1.66)	Cls Acc 71.9 (77.6)	Domain Acc 70.3 (61.5)
+Epoch: [1][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.17 (  1.64)	Cls Acc 84.4 (77.5)	Domain Acc 70.3 (61.3)
+Epoch: [1][ 700/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.36 (  1.63)	Cls Acc 81.2 (77.4)	Domain Acc 67.2 (61.8)
+Epoch: [1][ 800/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.53 (  1.62)	Cls Acc 78.1 (77.5)	Domain Acc 57.8 (61.8)
+Epoch: [1][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.50 (  1.61)	Cls Acc 78.1 (77.5)	Domain Acc 70.3 (61.8)
+Test: [  0/295]	Time  1.124 ( 1.124)	Loss 3.7044e-01 (3.7044e-01)	Acc@1  93.75 ( 93.75)
+Test: [100/295]	Time  0.622 ( 0.417)	Loss 4.0619e-01 (3.4636e-01)	Acc@1  81.25 ( 93.56)
+Test: [200/295]	Time  0.116 ( 0.411)	Loss 2.8876e-01 (3.4908e-01)	Acc@1  93.75 ( 93.66)
+ * Acc@1 93.603
+after pretraining lr: 0.00013160740129524923
+Epoch: [2][   0/1000]	Time  1.22 ( 1.22)	Data  0.01 ( 0.01)	Loss   1.40 (  1.40)	Cls Acc 93.8 (93.8)	Domain Acc 51.6 (51.6)
+Epoch: [2][ 100/1000]	Time  1.24 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.43 (  1.54)	Cls Acc 84.4 (78.4)	Domain Acc 60.9 (61.1)
+Epoch: [2][ 200/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.66 (  1.51)	Cls Acc 84.4 (78.3)	Domain Acc 59.4 (62.7)
+Epoch: [2][ 300/1000]	Time  1.23 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.23 (  1.49)	Cls Acc 84.4 (78.6)	Domain Acc 65.6 (63.0)
+Epoch: [2][ 400/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.51 (  1.48)	Cls Acc 78.1 (78.6)	Domain Acc 65.6 (63.4)
+Epoch: [2][ 500/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.29 (  1.47)	Cls Acc 87.5 (78.5)	Domain Acc 59.4 (63.0)
+Epoch: [2][ 600/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.44 (  1.48)	Cls Acc 84.4 (78.5)	Domain Acc 68.8 (62.5)
+Epoch: [2][ 700/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.41 (  1.49)	Cls Acc 81.2 (78.3)	Domain Acc 62.5 (62.1)
+Epoch: [2][ 800/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.24 (  1.49)	Cls Acc 84.4 (78.3)	Domain Acc 85.9 (61.5)
+Epoch: [2][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.55 (  1.48)	Cls Acc 75.0 (78.5)	Domain Acc 70.3 (61.0)
+Test: [  0/295]	Time  1.105 ( 1.105)	Loss 3.3314e-01 (3.3314e-01)	Acc@1 100.00 (100.00)
+Test: [100/295]	Time  0.643 ( 0.434)	Loss 4.0002e-01 (3.1814e-01)	Acc@1  87.50 ( 93.63)
+Test: [200/295]	Time  0.666 ( 0.438)	Loss 2.8117e-01 (3.2103e-01)	Acc@1 100.00 ( 93.72)
+ * Acc@1 93.709
+after pretraining lr: 0.00010606601717798215
+Epoch: [3][   0/1000]	Time  1.22 ( 1.22)	Data  0.01 ( 0.01)	Loss   1.49 (  1.49)	Cls Acc 68.8 (68.8)	Domain Acc 76.6 (76.6)
+Epoch: [3][ 100/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.40 (  1.46)	Cls Acc 75.0 (77.8)	Domain Acc 60.9 (58.7)
+Epoch: [3][ 200/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.42 (  1.42)	Cls Acc 87.5 (78.8)	Domain Acc 53.1 (60.5)
+Epoch: [3][ 300/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.24 (  1.43)	Cls Acc 87.5 (78.8)	Domain Acc 53.1 (59.2)
+Epoch: [3][ 400/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.38 (  1.43)	Cls Acc 81.2 (78.8)	Domain Acc 57.8 (59.1)
+Epoch: [3][ 500/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.55 (  1.43)	Cls Acc 84.4 (78.9)	Domain Acc 53.1 (59.6)
+Epoch: [3][ 600/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.42 (  1.43)	Cls Acc 87.5 (78.9)	Domain Acc 46.9 (59.4)
+Epoch: [3][ 700/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.43 (  1.43)	Cls Acc 84.4 (78.9)	Domain Acc 64.1 (58.8)
+Epoch: [3][ 800/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.46 (  1.43)	Cls Acc 75.0 (78.8)	Domain Acc 65.6 (58.7)
+Epoch: [3][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.33 (  1.43)	Cls Acc 68.8 (78.8)	Domain Acc 78.1 (58.8)
+Test: [  0/295]	Time  1.054 ( 1.054)	Loss 3.4113e-01 (3.4113e-01)	Acc@1  93.75 ( 93.75)
+Test: [100/295]	Time  0.713 ( 0.455)	Loss 3.4905e-01 (3.0643e-01)	Acc@1  87.50 ( 94.00)
+Test: [200/295]	Time  0.858 ( 0.436)	Loss 2.3018e-01 (3.0368e-01)	Acc@1  93.75 ( 94.34)
+ * Acc@1 94.368
+after pretraining lr: 8.972092687327323e-05
+Epoch: [4][   0/1000]	Time  1.22 ( 1.22)	Data  0.01 ( 0.01)	Loss   1.44 (  1.44)	Cls Acc 71.9 (71.9)	Domain Acc 54.7 (54.7)
+Epoch: [4][ 100/1000]	Time  1.25 ( 1.27)	Data  0.02 ( 0.05)	Loss   1.28 (  1.40)	Cls Acc 81.2 (80.9)	Domain Acc 53.1 (56.3)
+Epoch: [4][ 200/1000]	Time  1.25 ( 1.26)	Data  0.02 ( 0.03)	Loss   1.46 (  1.41)	Cls Acc 81.2 (80.3)	Domain Acc 48.4 (54.4)
+Epoch: [4][ 300/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.27 (  1.40)	Cls Acc 90.6 (80.1)	Domain Acc 51.6 (55.6)
+Epoch: [4][ 400/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.36 (  1.38)	Cls Acc 78.1 (80.1)	Domain Acc 46.9 (57.4)
+Epoch: [4][ 500/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.41 (  1.39)	Cls Acc 78.1 (79.9)	Domain Acc 70.3 (57.3)
+Epoch: [4][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.15 (  1.38)	Cls Acc 90.6 (79.8)	Domain Acc 57.8 (57.6)
+Epoch: [4][ 700/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.54 (  1.39)	Cls Acc 65.6 (79.9)	Domain Acc 50.0 (57.1)
+Epoch: [4][ 800/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.71 (  1.38)	Cls Acc 65.6 (79.8)	Domain Acc 59.4 (57.2)
+Epoch: [4][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.43 (  1.38)	Cls Acc 78.1 (79.8)	Domain Acc 56.2 (56.8)
+Test: [  0/295]	Time  1.143 ( 1.143)	Loss 6.7464e-01 (6.7464e-01)	Acc@1  75.00 ( 75.00)
+Test: [100/295]	Time  0.117 ( 0.461)	Loss 3.4885e-01 (4.5073e-01)	Acc@1  93.75 ( 84.84)
+Test: [200/295]	Time  0.116 ( 0.449)	Loss 3.5988e-01 (4.4499e-01)	Acc@1  87.50 ( 85.76)
+ * Acc@1 85.930
+after pretraining lr: 7.825422900366438e-05
+Epoch: [5][   0/1000]	Time  1.22 ( 1.22)	Data  0.02 ( 0.02)	Loss   1.59 (  1.59)	Cls Acc 78.1 (78.1)	Domain Acc 37.5 (37.5)
+Epoch: [5][ 100/1000]	Time  1.26 ( 1.24)	Data  0.03 ( 0.02)	Loss   1.13 (  1.38)	Cls Acc 90.6 (79.8)	Domain Acc 56.2 (55.6)
+Epoch: [5][ 200/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.27 (  1.37)	Cls Acc 81.2 (79.8)	Domain Acc 60.9 (57.2)
+Epoch: [5][ 300/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.30 (  1.36)	Cls Acc 78.1 (80.4)	Domain Acc 68.8 (57.1)
+Epoch: [5][ 400/1000]	Time  1.26 ( 1.25)	Data  0.03 ( 0.02)	Loss   1.71 (  1.35)	Cls Acc 62.5 (80.7)	Domain Acc 43.8 (57.6)
+Epoch: [5][ 500/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.33 (  1.35)	Cls Acc 81.2 (80.5)	Domain Acc 67.2 (57.9)
+Epoch: [5][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.25 (  1.35)	Cls Acc 84.4 (80.4)	Domain Acc 54.7 (57.7)
+Epoch: [5][ 700/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.44 (  1.34)	Cls Acc 78.1 (80.5)	Domain Acc 54.7 (58.1)
+Epoch: [5][ 800/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.20 (  1.34)	Cls Acc 81.2 (80.7)	Domain Acc 62.5 (57.9)
+Epoch: [5][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.51 (  1.33)	Cls Acc 59.4 (80.5)	Domain Acc 56.2 (58.5)
+Test: [  0/295]	Time  1.028 ( 1.028)	Loss 2.8881e-01 (2.8881e-01)	Acc@1  93.75 ( 93.75)
+Test: [100/295]	Time  0.734 ( 0.444)	Loss 2.7042e-01 (2.4644e-01)	Acc@1  87.50 ( 94.74)
+Test: [200/295]	Time  0.606 ( 0.426)	Loss 2.0848e-01 (2.4600e-01)	Acc@1  93.75 ( 94.75)
+ * Acc@1 95.048
+after pretraining lr: 6.971042407276225e-05
+Epoch: [6][   0/1000]	Time  1.22 ( 1.22)	Data  0.02 ( 0.02)	Loss   1.18 (  1.18)	Cls Acc 81.2 (81.2)	Domain Acc 60.9 (60.9)
+Epoch: [6][ 100/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.32 (  1.30)	Cls Acc 81.2 (80.9)	Domain Acc 48.4 (61.8)
+Epoch: [6][ 200/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.36 (  1.31)	Cls Acc 81.2 (81.0)	Domain Acc 54.7 (58.7)
+Epoch: [6][ 300/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.42 (  1.32)	Cls Acc 75.0 (81.0)	Domain Acc 65.6 (56.6)
+Epoch: [6][ 400/1000]	Time  1.24 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.34 (  1.32)	Cls Acc 78.1 (81.1)	Domain Acc 51.6 (57.8)
+Epoch: [6][ 500/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.48 (  1.32)	Cls Acc 81.2 (81.1)	Domain Acc 50.0 (57.4)
+Epoch: [6][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.34 (  1.31)	Cls Acc 87.5 (81.2)	Domain Acc 59.4 (57.9)
+Epoch: [6][ 700/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.38 (  1.31)	Cls Acc 75.0 (81.2)	Domain Acc 64.1 (58.0)
+Epoch: [6][ 800/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.19 (  1.31)	Cls Acc 81.2 (81.2)	Domain Acc 67.2 (58.1)
+Epoch: [6][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.20 (  1.30)	Cls Acc 84.4 (81.2)	Domain Acc 60.9 (58.5)
+Test: [  0/295]	Time  1.134 ( 1.134)	Loss 2.5355e-01 (2.5355e-01)	Acc@1 100.00 (100.00)
+Test: [100/295]	Time  0.419 ( 0.412)	Loss 3.2485e-01 (2.3920e-01)	Acc@1  87.50 ( 95.36)
+Test: [200/295]	Time  0.610 ( 0.418)	Loss 2.4669e-01 (2.4007e-01)	Acc@1  93.75 ( 95.24)
+ * Acc@1 95.409
+after pretraining lr: 6.306723114402858e-05
+Epoch: [7][   0/1000]	Time  1.22 ( 1.22)	Data  0.02 ( 0.02)	Loss   1.25 (  1.25)	Cls Acc 87.5 (87.5)	Domain Acc 57.8 (57.8)
+Epoch: [7][ 100/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.01 (  1.26)	Cls Acc 90.6 (82.1)	Domain Acc 71.9 (62.0)
+Epoch: [7][ 200/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.24 (  1.27)	Cls Acc 84.4 (82.2)	Domain Acc 70.3 (59.8)
+Epoch: [7][ 300/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.19 (  1.26)	Cls Acc 78.1 (82.0)	Domain Acc 73.4 (61.5)
+Epoch: [7][ 400/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.40 (  1.26)	Cls Acc 71.9 (82.0)	Domain Acc 59.4 (60.9)
+Epoch: [7][ 500/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.07 (  1.26)	Cls Acc 84.4 (82.0)	Domain Acc 75.0 (60.9)
+Epoch: [7][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.20 (  1.26)	Cls Acc 81.2 (81.9)	Domain Acc 59.4 (60.8)
+Epoch: [7][ 700/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.19 (  1.27)	Cls Acc 90.6 (82.0)	Domain Acc 50.0 (60.2)
+Epoch: [7][ 800/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.22 (  1.26)	Cls Acc 78.1 (81.9)	Domain Acc 64.1 (60.5)
+Epoch: [7][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.33 (  1.26)	Cls Acc 75.0 (81.9)	Domain Acc 53.1 (60.8)
+Test: [  0/295]	Time  1.158 ( 1.158)	Loss 3.0066e-01 (3.0066e-01)	Acc@1  93.75 ( 93.75)
+Test: [100/295]	Time  0.634 ( 0.447)	Loss 2.8546e-01 (2.4639e-01)	Acc@1  93.75 ( 94.99)
+Test: [200/295]	Time  0.316 ( 0.427)	Loss 2.4714e-01 (2.4657e-01)	Acc@1  93.75 ( 95.15)
+ * Acc@1 95.260
+after pretraining lr: 5.7735026918962585e-05
+Epoch: [8][   0/1000]	Time  1.21 ( 1.21)	Data  0.01 ( 0.01)	Loss   1.10 (  1.10)	Cls Acc 84.4 (84.4)	Domain Acc 67.2 (67.2)
+Epoch: [8][ 100/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.04)	Loss   1.30 (  1.23)	Cls Acc 81.2 (82.0)	Domain Acc 64.1 (63.3)
+Epoch: [8][ 200/1000]	Time  1.24 ( 1.26)	Data  0.02 ( 0.04)	Loss   1.21 (  1.24)	Cls Acc 90.6 (82.0)	Domain Acc 56.2 (60.6)
+Epoch: [8][ 300/1000]	Time  1.25 ( 1.26)	Data  0.02 ( 0.03)	Loss   1.27 (  1.24)	Cls Acc 78.1 (82.1)	Domain Acc 51.6 (60.0)
+Epoch: [8][ 400/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.30 (  1.24)	Cls Acc 75.0 (82.0)	Domain Acc 64.1 (60.0)
+Epoch: [8][ 500/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.63 (  1.24)	Cls Acc 71.9 (81.9)	Domain Acc 53.1 (60.7)
+Epoch: [8][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.15 (  1.24)	Cls Acc 87.5 (82.0)	Domain Acc 59.4 (60.3)
+Epoch: [8][ 700/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.17 (  1.24)	Cls Acc 81.2 (82.1)	Domain Acc 57.8 (60.4)
+Epoch: [8][ 800/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.46 (  1.24)	Cls Acc 78.1 (82.2)	Domain Acc 53.1 (60.5)
+Epoch: [8][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.43 (  1.25)	Cls Acc 68.8 (82.1)	Domain Acc 62.5 (59.5)
+Test: [  0/295]	Time  1.276 ( 1.276)	Loss 2.8533e-01 (2.8533e-01)	Acc@1  93.75 ( 93.75)
+Test: [100/295]	Time  0.116 ( 0.432)	Loss 2.5156e-01 (2.4616e-01)	Acc@1 100.00 ( 95.36)
+Test: [200/295]	Time  0.629 ( 0.431)	Loss 2.3488e-01 (2.4789e-01)	Acc@1  93.75 ( 95.49)
+ * Acc@1 95.494
+after pretraining lr: 5.334838230116769e-05
+Epoch: [9][   0/1000]	Time  1.22 ( 1.22)	Data  0.01 ( 0.01)	Loss   1.24 (  1.24)	Cls Acc 90.6 (90.6)	Domain Acc 57.8 (57.8)
+Epoch: [9][ 100/1000]	Time  1.24 ( 1.23)	Data  0.02 ( 0.02)	Loss   1.04 (  1.29)	Cls Acc 78.1 (81.5)	Domain Acc 73.4 (54.5)
+Epoch: [9][ 200/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.45 (  1.26)	Cls Acc 71.9 (81.9)	Domain Acc 48.4 (60.2)
+Epoch: [9][ 300/1000]	Time  1.24 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.25 (  1.27)	Cls Acc 84.4 (81.9)	Domain Acc 62.5 (58.2)
+Epoch: [9][ 400/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.27 (  1.26)	Cls Acc 81.2 (81.9)	Domain Acc 51.6 (59.3)
+Epoch: [9][ 500/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.15 (  1.25)	Cls Acc 87.5 (81.9)	Domain Acc 65.6 (59.3)
+Epoch: [9][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.44 (  1.25)	Cls Acc 75.0 (82.0)	Domain Acc 57.8 (59.6)
+Epoch: [9][ 700/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   0.95 (  1.24)	Cls Acc 93.8 (82.1)	Domain Acc 71.9 (60.3)
+Epoch: [9][ 800/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.27 (  1.24)	Cls Acc 84.4 (82.0)	Domain Acc 54.7 (59.8)
+Epoch: [9][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.08 (  1.25)	Cls Acc 87.5 (82.0)	Domain Acc 71.9 (59.2)
+Test: [  0/295]	Time  1.003 ( 1.003)	Loss 2.0345e-01 (2.0345e-01)	Acc@1 100.00 (100.00)
+Test: [100/295]	Time  0.116 ( 0.447)	Loss 2.5801e-01 (2.1105e-01)	Acc@1  93.75 ( 95.79)
+Test: [200/295]	Time  0.115 ( 0.421)	Loss 2.1131e-01 (2.1378e-01)	Acc@1  93.75 ( 95.93)
+ * Acc@1 95.813
+after pretraining lr: 4.966800782285106e-05
+Epoch: [10][   0/1000]	Time  1.21 ( 1.21)	Data  0.01 ( 0.01)	Loss   1.12 (  1.12)	Cls Acc 87.5 (87.5)	Domain Acc 59.4 (59.4)
+Epoch: [10][ 100/1000]	Time  1.24 ( 1.23)	Data  0.02 ( 0.02)	Loss   1.25 (  1.27)	Cls Acc 81.2 (82.5)	Domain Acc 54.7 (54.6)
+Epoch: [10][ 200/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.17 (  1.25)	Cls Acc 84.4 (82.6)	Domain Acc 62.5 (57.8)
+Epoch: [10][ 300/1000]	Time  1.24 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.49 (  1.23)	Cls Acc 78.1 (82.6)	Domain Acc 51.6 (59.9)
+Epoch: [10][ 400/1000]	Time  1.24 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.18 (  1.24)	Cls Acc 84.4 (82.4)	Domain Acc 56.2 (58.8)
+Epoch: [10][ 500/1000]	Time  1.24 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.26 (  1.24)	Cls Acc 84.4 (82.3)	Domain Acc 64.1 (59.7)
+Epoch: [10][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.20 (  1.24)	Cls Acc 84.4 (82.2)	Domain Acc 53.1 (58.8)
+Epoch: [10][ 700/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.11 (  1.23)	Cls Acc 87.5 (82.3)	Domain Acc 60.9 (59.6)
+Epoch: [10][ 800/1000]	Time  1.23 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.04 (  1.24)	Cls Acc 90.6 (82.3)	Domain Acc 57.8 (58.8)
+Epoch: [10][ 900/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.12 (  1.23)	Cls Acc 78.1 (82.5)	Domain Acc 62.5 (59.9)
+Test: [  0/295]	Time  0.976 ( 0.976)	Loss 2.3425e-01 (2.3425e-01)	Acc@1 100.00 (100.00)
+Test: [100/295]	Time  0.276 ( 0.386)	Loss 2.2661e-01 (2.1812e-01)	Acc@1  93.75 ( 95.67)
+Test: [200/295]	Time  0.592 ( 0.405)	Loss 2.0655e-01 (2.1971e-01)	Acc@1  93.75 ( 95.58)
+ * Acc@1 95.643
+after pretraining lr: 4.6530242955104985e-05
+Epoch: [11][   0/1000]	Time  1.22 ( 1.22)	Data  0.02 ( 0.02)	Loss   1.01 (  1.01)	Cls Acc 93.8 (93.8)	Domain Acc 56.2 (56.2)
+Epoch: [11][ 100/1000]	Time  1.24 ( 1.23)	Data  0.02 ( 0.02)	Loss   1.07 (  1.23)	Cls Acc 90.6 (82.6)	Domain Acc 65.6 (60.6)
+Epoch: [11][ 200/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.40 (  1.24)	Cls Acc 75.0 (82.3)	Domain Acc 56.2 (59.6)
+Epoch: [11][ 300/1000]	Time  1.24 ( 1.26)	Data  0.02 ( 0.03)	Loss   1.08 (  1.23)	Cls Acc 84.4 (82.5)	Domain Acc 62.5 (59.7)
+Epoch: [11][ 400/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.26 (  1.23)	Cls Acc 81.2 (82.7)	Domain Acc 64.1 (59.7)
+Epoch: [11][ 500/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.58 (  1.23)	Cls Acc 78.1 (82.4)	Domain Acc 53.1 (58.8)
+Epoch: [11][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.21 (  1.23)	Cls Acc 84.4 (82.5)	Domain Acc 53.1 (59.1)
+Epoch: [11][ 700/1000]	Time  3.18 ( 1.25)	Data  1.97 ( 0.03)	Loss   1.15 (  1.23)	Cls Acc 81.2 (82.6)	Domain Acc 65.6 (59.1)
+Epoch: [11][ 800/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.08 (  1.23)	Cls Acc 84.4 (82.7)	Domain Acc 64.1 (59.3)
+Epoch: [11][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.28 (  1.22)	Cls Acc 78.1 (82.7)	Domain Acc 64.1 (59.6)
+Test: [  0/295]	Time  1.100 ( 1.100)	Loss 2.1204e-01 (2.1204e-01)	Acc@1 100.00 (100.00)
+Test: [100/295]	Time  0.509 ( 0.419)	Loss 2.5104e-01 (2.0499e-01)	Acc@1  93.75 ( 95.61)
+Test: [200/295]	Time  0.747 ( 0.429)	Loss 1.9785e-01 (2.0609e-01)	Acc@1  93.75 ( 95.68)
+ * Acc@1 95.664
+after pretraining lr: 4.381912897190635e-05
+Epoch: [12][   0/1000]	Time  1.21 ( 1.21)	Data  0.01 ( 0.01)	Loss   1.59 (  1.59)	Cls Acc 78.1 (78.1)	Domain Acc 51.6 (51.6)
+Epoch: [12][ 100/1000]	Time  1.23 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.36 (  1.26)	Cls Acc 75.0 (82.5)	Domain Acc 56.2 (55.5)
+Epoch: [12][ 200/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.03)	Loss   1.20 (  1.22)	Cls Acc 81.2 (82.7)	Domain Acc 67.2 (60.1)
+Epoch: [12][ 300/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.57 (  1.22)	Cls Acc 68.8 (82.3)	Domain Acc 54.7 (61.7)
+Epoch: [12][ 400/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.28 (  1.23)	Cls Acc 78.1 (82.5)	Domain Acc 60.9 (58.8)
+Epoch: [12][ 500/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.21 (  1.22)	Cls Acc 87.5 (82.4)	Domain Acc 70.3 (59.3)
+Epoch: [12][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.25 (  1.22)	Cls Acc 75.0 (82.2)	Domain Acc 67.2 (59.9)
+Epoch: [12][ 700/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.21 (  1.22)	Cls Acc 84.4 (82.3)	Domain Acc 53.1 (59.3)
+Epoch: [12][ 800/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.08 (  1.22)	Cls Acc 87.5 (82.3)	Domain Acc 56.2 (59.6)
+Epoch: [12][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.13 (  1.22)	Cls Acc 90.6 (82.4)	Domain Acc 54.7 (59.6)
+Test: [  0/295]	Time  1.164 ( 1.164)	Loss 2.1551e-01 (2.1551e-01)	Acc@1 100.00 (100.00)
+Test: [100/295]	Time  0.599 ( 0.445)	Loss 2.4503e-01 (2.1194e-01)	Acc@1  93.75 ( 95.61)
+Test: [200/295]	Time  0.832 ( 0.444)	Loss 2.0544e-01 (2.1283e-01)	Acc@1  93.75 ( 95.80)
+ * Acc@1 95.919
+after pretraining lr: 4.145006614859292e-05
+Epoch: [13][   0/1000]	Time  1.21 ( 1.21)	Data  0.02 ( 0.02)	Loss   1.24 (  1.24)	Cls Acc 84.4 (84.4)	Domain Acc 53.1 (53.1)
+Epoch: [13][ 100/1000]	Time  1.24 ( 1.23)	Data  0.02 ( 0.02)	Loss   1.33 (  1.19)	Cls Acc 81.2 (83.4)	Domain Acc 70.3 (61.7)
+Epoch: [13][ 200/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.20 (  1.20)	Cls Acc 87.5 (83.0)	Domain Acc 48.4 (59.9)
+Epoch: [13][ 300/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.17 (  1.21)	Cls Acc 84.4 (82.9)	Domain Acc 68.8 (59.1)
+Epoch: [13][ 400/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.21 (  1.20)	Cls Acc 78.1 (82.9)	Domain Acc 57.8 (59.8)
+Epoch: [13][ 500/1000]	Time  1.25 ( 1.25)	Data  0.03 ( 0.02)	Loss   1.21 (  1.21)	Cls Acc 87.5 (82.8)	Domain Acc 64.1 (58.6)
+Epoch: [13][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.24 (  1.22)	Cls Acc 87.5 (82.8)	Domain Acc 50.0 (58.1)
+Epoch: [13][ 700/1000]	Time  1.23 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.28 (  1.21)	Cls Acc 84.4 (82.8)	Domain Acc 59.4 (58.8)
+Epoch: [13][ 800/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.04 (  1.21)	Cls Acc 87.5 (82.9)	Domain Acc 62.5 (59.1)
+Epoch: [13][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.34 (  1.21)	Cls Acc 84.4 (83.0)	Domain Acc 60.9 (58.7)
+Test: [  0/295]	Time  1.130 ( 1.130)	Loss 2.2773e-01 (2.2773e-01)	Acc@1 100.00 (100.00)
+Test: [100/295]	Time  0.117 ( 0.437)	Loss 2.8093e-01 (2.1496e-01)	Acc@1  93.75 ( 95.85)
+Test: [200/295]	Time  0.155 ( 0.406)	Loss 1.9681e-01 (2.1621e-01)	Acc@1  93.75 ( 95.93)
+ * Acc@1 96.004
+after pretraining lr: 3.9359793425308615e-05
+Epoch: [14][   0/1000]	Time  1.21 ( 1.21)	Data  0.02 ( 0.02)	Loss   1.06 (  1.06)	Cls Acc 90.6 (90.6)	Domain Acc 57.8 (57.8)
+Epoch: [14][ 100/1000]	Time  1.24 ( 1.27)	Data  0.02 ( 0.05)	Loss   1.27 (  1.17)	Cls Acc 75.0 (84.1)	Domain Acc 62.5 (58.3)
+Epoch: [14][ 200/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.04)	Loss   1.06 (  1.19)	Cls Acc 87.5 (83.8)	Domain Acc 65.6 (58.8)
+Epoch: [14][ 300/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.03)	Loss   0.96 (  1.20)	Cls Acc 93.8 (83.2)	Domain Acc 64.1 (58.3)
+Epoch: [14][ 400/1000]	Time  1.25 ( 1.25)	Data  0.03 ( 0.03)	Loss   1.21 (  1.19)	Cls Acc 81.2 (83.4)	Domain Acc 60.9 (59.8)
+Epoch: [14][ 500/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.15 (  1.19)	Cls Acc 87.5 (83.4)	Domain Acc 59.4 (59.5)
+Epoch: [14][ 600/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.18 (  1.20)	Cls Acc 87.5 (83.2)	Domain Acc 46.9 (58.9)
+Epoch: [14][ 700/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.10 (  1.20)	Cls Acc 84.4 (83.2)	Domain Acc 64.1 (59.3)
+Epoch: [14][ 800/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   0.98 (  1.19)	Cls Acc 93.8 (83.3)	Domain Acc 67.2 (59.3)
+Epoch: [14][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.12 (  1.19)	Cls Acc 84.4 (83.2)	Domain Acc 54.7 (59.7)
+Test: [  0/295]	Time  1.120 ( 1.120)	Loss 2.1646e-01 (2.1646e-01)	Acc@1  93.75 ( 93.75)
+Test: [100/295]	Time  0.710 ( 0.398)	Loss 2.6077e-01 (1.9671e-01)	Acc@1  93.75 ( 95.85)
+Test: [200/295]	Time  0.713 ( 0.411)	Loss 2.0404e-01 (1.9702e-01)	Acc@1  93.75 ( 95.96)
+ * Acc@1 96.068
+after pretraining lr: 3.7500000000000003e-05
+Epoch: [15][   0/1000]	Time  1.22 ( 1.22)	Data  0.03 ( 0.03)	Loss   1.19 (  1.19)	Cls Acc 81.2 (81.2)	Domain Acc 59.4 (59.4)
+Epoch: [15][ 100/1000]	Time  1.24 ( 1.23)	Data  0.02 ( 0.02)	Loss   1.48 (  1.18)	Cls Acc 75.0 (84.3)	Domain Acc 64.1 (57.3)
+Epoch: [15][ 200/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.09 (  1.17)	Cls Acc 84.4 (84.3)	Domain Acc 62.5 (59.5)
+Epoch: [15][ 300/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   0.96 (  1.17)	Cls Acc 96.9 (84.3)	Domain Acc 57.8 (60.3)
+Epoch: [15][ 400/1000]	Time  1.26 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.32 (  1.18)	Cls Acc 71.9 (84.1)	Domain Acc 70.3 (59.1)
+Epoch: [15][ 500/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.19 (  1.17)	Cls Acc 81.2 (84.0)	Domain Acc 64.1 (60.4)
+Epoch: [15][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.23 (  1.17)	Cls Acc 84.4 (83.9)	Domain Acc 56.2 (59.8)
+Epoch: [15][ 700/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.04 (  1.18)	Cls Acc 90.6 (83.9)	Domain Acc 48.4 (59.4)
+Epoch: [15][ 800/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.04 (  1.18)	Cls Acc 87.5 (83.8)	Domain Acc 64.1 (59.6)
+Epoch: [15][ 900/1000]	Time  1.23 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.29 (  1.18)	Cls Acc 84.4 (83.7)	Domain Acc 56.2 (59.4)
+Test: [  0/295]	Time  1.032 ( 1.032)	Loss 2.2404e-01 (2.2404e-01)	Acc@1  93.75 ( 93.75)
+Test: [100/295]	Time  0.116 ( 0.441)	Loss 2.5352e-01 (1.8948e-01)	Acc@1  93.75 ( 96.35)
+Test: [200/295]	Time  0.116 ( 0.427)	Loss 1.6947e-01 (1.9085e-01)	Acc@1  93.75 ( 96.11)
+ * Acc@1 96.174
+after pretraining lr: 3.583311502709878e-05
+Epoch: [16][   0/1000]	Time  1.21 ( 1.21)	Data  0.01 ( 0.01)	Loss   1.18 (  1.18)	Cls Acc 84.4 (84.4)	Domain Acc 59.4 (59.4)
+Epoch: [16][ 100/1000]	Time  1.23 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.11 (  1.15)	Cls Acc 87.5 (84.2)	Domain Acc 57.8 (63.2)
+Epoch: [16][ 200/1000]	Time  1.24 ( 1.24)	Data  0.02 ( 0.03)	Loss   1.05 (  1.17)	Cls Acc 84.4 (84.0)	Domain Acc 64.1 (59.7)
+Epoch: [16][ 300/1000]	Time  1.24 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.38 (  1.17)	Cls Acc 75.0 (83.9)	Domain Acc 62.5 (60.5)
+Epoch: [16][ 400/1000]	Time  1.26 ( 1.24)	Data  0.02 ( 0.02)	Loss   0.95 (  1.16)	Cls Acc 90.6 (83.9)	Domain Acc 65.6 (61.0)
+Epoch: [16][ 500/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.03 (  1.17)	Cls Acc 90.6 (83.9)	Domain Acc 65.6 (59.5)
+Epoch: [16][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.34 (  1.18)	Cls Acc 75.0 (83.7)	Domain Acc 68.8 (60.0)
+Epoch: [16][ 700/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.22 (  1.17)	Cls Acc 81.2 (83.7)	Domain Acc 59.4 (60.1)
+Epoch: [16][ 800/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.45 (  1.18)	Cls Acc 75.0 (83.6)	Domain Acc 53.1 (59.9)
+Epoch: [16][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.12 (  1.17)	Cls Acc 81.2 (83.6)	Domain Acc 60.9 (60.4)
+Test: [  0/295]	Time  1.165 ( 1.165)	Loss 2.0442e-01 (2.0442e-01)	Acc@1  93.75 ( 93.75)
+Test: [100/295]	Time  0.613 ( 0.439)	Loss 2.2616e-01 (1.8683e-01)	Acc@1  93.75 ( 95.92)
+Test: [200/295]	Time  0.115 ( 0.437)	Loss 1.8045e-01 (1.8732e-01)	Acc@1  93.75 ( 95.96)
+ * Acc@1 96.068
+after pretraining lr: 3.432945239845196e-05
+Epoch: [17][   0/1000]	Time  1.21 ( 1.21)	Data  0.02 ( 0.02)	Loss   1.07 (  1.07)	Cls Acc 90.6 (90.6)	Domain Acc 56.2 (56.2)
+Epoch: [17][ 100/1000]	Time  1.24 ( 1.23)	Data  0.02 ( 0.02)	Loss   1.32 (  1.17)	Cls Acc 78.1 (83.6)	Domain Acc 54.7 (59.3)
+Epoch: [17][ 200/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.07 (  1.18)	Cls Acc 87.5 (83.4)	Domain Acc 67.2 (59.9)
+Epoch: [17][ 300/1000]	Time  1.23 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.32 (  1.18)	Cls Acc 68.8 (83.3)	Domain Acc 60.9 (60.8)
+Epoch: [17][ 400/1000]	Time  1.26 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.09 (  1.18)	Cls Acc 84.4 (83.5)	Domain Acc 50.0 (60.1)
+Epoch: [17][ 500/1000]	Time  1.25 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.06 (  1.18)	Cls Acc 90.6 (83.7)	Domain Acc 75.0 (59.4)
+Epoch: [17][ 600/1000]	Time  1.24 ( 1.24)	Data  0.02 ( 0.02)	Loss   0.90 (  1.17)	Cls Acc 93.8 (83.8)	Domain Acc 67.2 (60.2)
+Epoch: [17][ 700/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.26 (  1.17)	Cls Acc 81.2 (83.8)	Domain Acc 56.2 (60.5)
+Epoch: [17][ 800/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.32 (  1.17)	Cls Acc 68.8 (83.8)	Domain Acc 60.9 (60.2)
+Epoch: [17][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.10 (  1.17)	Cls Acc 81.2 (83.6)	Domain Acc 68.8 (60.3)
+Test: [  0/295]	Time  1.079 ( 1.079)	Loss 1.9704e-01 (1.9704e-01)	Acc@1 100.00 (100.00)
+Test: [100/295]	Time  0.928 ( 0.412)	Loss 2.4198e-01 (1.7839e-01)	Acc@1  93.75 ( 96.10)
+Test: [200/295]	Time  0.621 ( 0.406)	Loss 2.0135e-01 (1.8047e-01)	Acc@1  93.75 ( 96.02)
+ * Acc@1 96.089
+after pretraining lr: 3.2965225735734386e-05
+Epoch: [18][   0/1000]	Time  1.22 ( 1.22)	Data  0.01 ( 0.01)	Loss   1.17 (  1.17)	Cls Acc 87.5 (87.5)	Domain Acc 65.6 (65.6)
+Epoch: [18][ 100/1000]	Time  1.23 ( 1.23)	Data  0.02 ( 0.02)	Loss   1.18 (  1.17)	Cls Acc 87.5 (84.0)	Domain Acc 50.0 (57.9)
+Epoch: [18][ 200/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.00 (  1.18)	Cls Acc 87.5 (83.6)	Domain Acc 70.3 (59.1)
+Epoch: [18][ 300/1000]	Time  1.24 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.22 (  1.18)	Cls Acc 78.1 (83.7)	Domain Acc 56.2 (58.7)
+Epoch: [18][ 400/1000]	Time  1.24 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.13 (  1.18)	Cls Acc 87.5 (83.7)	Domain Acc 48.4 (57.4)
+Epoch: [18][ 500/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.11 (  1.18)	Cls Acc 78.1 (83.7)	Domain Acc 62.5 (58.4)
+Epoch: [18][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.12 (  1.18)	Cls Acc 84.4 (83.5)	Domain Acc 48.4 (58.1)
+Epoch: [18][ 700/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.23 (  1.18)	Cls Acc 75.0 (83.8)	Domain Acc 56.2 (58.0)
+Epoch: [18][ 800/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.30 (  1.18)	Cls Acc 78.1 (83.8)	Domain Acc 56.2 (58.3)
+Epoch: [18][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.22 (  1.18)	Cls Acc 87.5 (83.7)	Domain Acc 64.1 (58.5)
+Test: [  0/295]	Time  1.095 ( 1.095)	Loss 1.8752e-01 (1.8752e-01)	Acc@1 100.00 (100.00)
+Test: [100/295]	Time  0.160 ( 0.413)	Loss 2.5228e-01 (1.8072e-01)	Acc@1  93.75 ( 96.47)
+Test: [200/295]	Time  0.115 ( 0.417)	Loss 1.9327e-01 (1.8118e-01)	Acc@1  93.75 ( 96.18)
+ * Acc@1 96.259
+after pretraining lr: 3.1721137903216925e-05
+Epoch: [19][   0/1000]	Time  1.22 ( 1.22)	Data  0.02 ( 0.02)	Loss   1.26 (  1.26)	Cls Acc 87.5 (87.5)	Domain Acc 64.1 (64.1)
+Epoch: [19][ 100/1000]	Time  1.24 ( 1.23)	Data  0.02 ( 0.02)	Loss   1.04 (  1.12)	Cls Acc 87.5 (85.2)	Domain Acc 65.6 (60.4)
+Epoch: [19][ 200/1000]	Time  1.24 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.21 (  1.16)	Cls Acc 81.2 (84.3)	Domain Acc 56.2 (59.1)
+Epoch: [19][ 300/1000]	Time  1.24 ( 1.24)	Data  0.02 ( 0.02)	Loss   1.22 (  1.17)	Cls Acc 87.5 (83.8)	Domain Acc 60.9 (59.0)
+Epoch: [19][ 400/1000]	Time  1.25 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.04 (  1.16)	Cls Acc 90.6 (83.9)	Domain Acc 54.7 (59.1)
+Epoch: [19][ 500/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.03)	Loss   1.14 (  1.16)	Cls Acc 78.1 (83.9)	Domain Acc 57.8 (59.1)
+Epoch: [19][ 600/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.36 (  1.17)	Cls Acc 81.2 (84.0)	Domain Acc 57.8 (58.6)
+Epoch: [19][ 700/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.08 (  1.16)	Cls Acc 90.6 (83.9)	Domain Acc 70.3 (59.3)
+Epoch: [19][ 800/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.15 (  1.16)	Cls Acc 78.1 (83.8)	Domain Acc 62.5 (59.4)
+Epoch: [19][ 900/1000]	Time  1.24 ( 1.25)	Data  0.02 ( 0.02)	Loss   1.08 (  1.17)	Cls Acc 87.5 (83.7)	Domain Acc 48.4 (58.9)
+Test: [  0/295]	Time  1.212 ( 1.212)	Loss 2.3279e-01 (2.3279e-01)	Acc@1 100.00 (100.00)
+Test: [100/295]	Time  0.704 ( 0.427)	Loss 2.2856e-01 (1.8979e-01)	Acc@1  93.75 ( 96.41)
+Test: [200/295]	Time  0.115 ( 0.422)	Loss 1.9704e-01 (1.9078e-01)	Acc@1  93.75 ( 96.24)
+ * Acc@1 96.323
+best_acc1 = 96.3
+Test: [  0/432]	Time  1.108 ( 1.108)	Loss 1.7337e+00 (1.7337e+00)	Acc@1   0.00 (  0.00)
+Traceback (most recent call last):
+  File "cloth_bsp.py", line 461, in <module>
+    main(args)
+  File "cloth_bsp.py", line 296, in main
+    acc1 = utils.validate(test_loader, classifier, args, device)
+  File "/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py", line 127, in validate
+    for i, data in enumerate(val_loader):
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1333, in _next_data
+    return self._process_data(data)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1359, in _process_data
+    data.reraise()
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 302, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 61, in fetch
+    return self.collate_fn(data)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/_utils/collate.py", line 265, in default_collate
+    return collate(batch, collate_fn_map=default_collate_fn_map)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/_utils/collate.py", line 143, in collate
+    return [collate(samples, collate_fn_map=collate_fn_map) for samples in transposed]  # Backwards compatibility.
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/_utils/collate.py", line 143, in <listcomp>
+    return [collate(samples, collate_fn_map=collate_fn_map) for samples in transposed]  # Backwards compatibility.
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/_utils/collate.py", line 120, in collate
+    return collate_fn_map[elem_type](batch, collate_fn_map=collate_fn_map)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/_utils/collate.py", line 163, in collate_tensor_fn
+    return torch.stack(batch, 0, out=out)
+RuntimeError: stack expects each tensor to be equal size, but got [3, 224, 242] at entry 0 and [3, 224, 322] at entry 5
+

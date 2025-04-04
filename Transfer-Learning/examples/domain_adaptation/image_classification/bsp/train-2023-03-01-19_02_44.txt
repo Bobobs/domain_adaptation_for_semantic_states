@@ -1,0 +1,56 @@
+Namespace(arch='convnext_base', batch_size=32, bottleneck_dim=256, data='Office31', epochs=20, iters_per_epoch=1000, log='bsp', lr=0.003, lr_decay=0.75, lr_gamma=0.001, momentum=0.9, no_hflip=False, no_pool=False, norm_mean=(0.485, 0.456, 0.406), norm_std=(0.229, 0.224, 0.225), per_class_eval=False, phase='train', pretrain=None, pretrain_epochs=3, pretrain_lr=0.001, print_freq=100, ratio=[0.75, 1.3333333333333333], resize_size=224, root='data/office31', scale=[0.08, 1.0], scratch=False, seed=None, source=['A'], target=['W'], trade_off=1.0, trade_off_bsp=0.0002, train_resizing='default', val_resizing='default', weight_decay=0.001, workers=2)
+=> using model 'convnext_base'
+/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py:136: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  top2, predicted2 = torch.topk(sm(output.data), 2, dim=1, largest=True, sorted=True)
+/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py:137: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  top3, predicted3 = torch.topk(sm(output.data), 3, dim=1, largest=True, sorted=True)
+/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py:138: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  top9, predicted9 = torch.topk(sm(output.data), 9, dim=1, largest=True, sorted=True)
+Test: [   0/3918]	Time  2.116 ( 2.116)	Loss 1.0904e+00 (1.0904e+00)	Acc@1 100.00 (100.00)
+Test: [ 100/3918]	Time  0.014 ( 0.043)	Loss 1.9605e+00 (1.1186e+00)	Acc@1   0.00 ( 85.15)
+Test: [ 200/3918]	Time  0.017 ( 0.033)	Loss 2.6941e+00 (1.7814e+00)	Acc@1   0.00 ( 42.79)
+Test: [ 300/3918]	Time  0.015 ( 0.030)	Loss 2.5627e-01 (2.0356e+00)	Acc@1 100.00 ( 36.88)
+Test: [ 400/3918]	Time  0.014 ( 0.028)	Loss 3.5011e-01 (1.5663e+00)	Acc@1 100.00 ( 52.62)
+Test: [ 500/3918]	Time  0.015 ( 0.027)	Loss 1.4681e-02 (1.2795e+00)	Acc@1 100.00 ( 62.08)
+Test: [ 600/3918]	Time  0.016 ( 0.026)	Loss 1.5337e-01 (1.0736e+00)	Acc@1 100.00 ( 68.39)
+Test: [ 700/3918]	Time  0.016 ( 0.026)	Loss 1.0287e-01 (9.3475e-01)	Acc@1 100.00 ( 72.90)
+Test: [ 800/3918]	Time  0.015 ( 0.025)	Loss 6.3315e-01 (8.8652e-01)	Acc@1 100.00 ( 74.53)
+Test: [ 900/3918]	Time  0.015 ( 0.025)	Loss 4.3417e-02 (8.6371e-01)	Acc@1 100.00 ( 77.36)
+Test: [1000/3918]	Time  0.015 ( 0.025)	Loss 9.9990e-02 (7.8565e-01)	Acc@1 100.00 ( 79.62)
+Test: [1100/3918]	Time  0.018 ( 0.024)	Loss 1.1036e+00 (8.7514e-01)	Acc@1   0.00 ( 73.57)
+Test: [1200/3918]	Time  0.015 ( 0.024)	Loss 1.3707e-01 (8.1370e-01)	Acc@1 100.00 ( 75.69)
+Test: [1300/3918]	Time  0.018 ( 0.024)	Loss 1.3362e-01 (7.7677e-01)	Acc@1 100.00 ( 77.02)
+Test: [1400/3918]	Time  0.015 ( 0.024)	Loss 7.3206e-02 (7.3216e-01)	Acc@1 100.00 ( 78.44)
+Test: [1500/3918]	Time  0.014 ( 0.024)	Loss 7.3096e-02 (6.8802e-01)	Acc@1 100.00 ( 79.88)
+Test: [1600/3918]	Time  0.014 ( 0.024)	Loss 1.7775e+00 (6.8214e-01)	Acc@1   0.00 ( 79.45)
+Test: [1700/3918]	Time  0.018 ( 0.024)	Loss 2.6268e-02 (6.9528e-01)	Acc@1 100.00 ( 77.13)
+Test: [1800/3918]	Time  0.018 ( 0.024)	Loss 9.2148e-02 (6.5969e-01)	Acc@1 100.00 ( 78.40)
+Test: [1900/3918]	Time  0.027 ( 0.024)	Loss 2.6706e-02 (6.3851e-01)	Acc@1 100.00 ( 79.22)
+Test: [2000/3918]	Time  0.027 ( 0.024)	Loss 1.2220e-01 (6.2378e-01)	Acc@1 100.00 ( 80.01)
+Test: [2100/3918]	Time  0.031 ( 0.024)	Loss 1.2878e+00 (6.3245e-01)	Acc@1 100.00 ( 80.96)
+Test: [2200/3918]	Time  0.032 ( 0.023)	Loss 2.6690e+00 (6.6556e-01)	Acc@1   0.00 ( 80.96)
+Test: [2300/3918]	Time  0.033 ( 0.023)	Loss 2.5283e+00 (7.4913e-01)	Acc@1   0.00 ( 77.44)
+Test: [2400/3918]	Time  0.025 ( 0.023)	Loss 1.3946e-01 (7.8589e-01)	Acc@1 100.00 ( 75.97)
+Test: [2500/3918]	Time  0.024 ( 0.023)	Loss 1.6324e+00 (7.6065e-01)	Acc@1   0.00 ( 76.81)
+Test: [2600/3918]	Time  0.015 ( 0.023)	Loss 1.2151e-01 (7.4668e-01)	Acc@1 100.00 ( 77.24)
+Test: [2700/3918]	Time  0.017 ( 0.023)	Loss 1.2270e+00 (7.3357e-01)	Acc@1   0.00 ( 77.49)
+Test: [2800/3918]	Time  0.019 ( 0.023)	Loss 1.1665e-01 (7.2574e-01)	Acc@1 100.00 ( 77.72)
+Test: [2900/3918]	Time  0.017 ( 0.023)	Loss 1.4487e-01 (7.0333e-01)	Acc@1 100.00 ( 78.49)
+Test: [3000/3918]	Time  0.023 ( 0.023)	Loss 5.4209e-02 (6.8293e-01)	Acc@1 100.00 ( 79.21)
+Test: [3100/3918]	Time  0.017 ( 0.023)	Loss 9.7240e-01 (6.8224e-01)	Acc@1 100.00 ( 79.10)
+Test: [3200/3918]	Time  0.018 ( 0.023)	Loss 3.7300e-01 (6.8322e-01)	Acc@1 100.00 ( 79.76)
+Test: [3300/3918]	Time  0.015 ( 0.023)	Loss 7.8021e-01 (6.7644e-01)	Acc@1 100.00 ( 80.37)
+Test: [3400/3918]	Time  0.015 ( 0.023)	Loss 9.2431e-01 (6.8487e-01)	Acc@1 100.00 ( 80.18)
+Test: [3500/3918]	Time  0.022 ( 0.023)	Loss 5.7165e-02 (6.7546e-01)	Acc@1 100.00 ( 80.75)
+Test: [3600/3918]	Time  0.018 ( 0.023)	Loss 1.3319e-01 (6.6090e-01)	Acc@1 100.00 ( 81.28)
+Test: [3700/3918]	Time  0.018 ( 0.023)	Loss 1.4841e+00 (6.6359e-01)	Acc@1   0.00 ( 80.52)
+Test: [3800/3918]	Time  0.019 ( 0.023)	Loss 1.1439e+00 (6.8353e-01)	Acc@1 100.00 ( 79.06)
+Test: [3900/3918]	Time  0.041 ( 0.023)	Loss 7.8861e-01 (6.8602e-01)	Acc@1 100.00 ( 79.59)
+ * Acc@1 79.684
+test_acc1 = 79.7
+Traceback (most recent call last):
+  File "testing_bsp.py", line 487, in <module>
+    main(args)
+  File "testing_bsp.py", line 315, in main
+    from bokeh.plotting import figure, show
+ModuleNotFoundError: No module named 'bokeh'

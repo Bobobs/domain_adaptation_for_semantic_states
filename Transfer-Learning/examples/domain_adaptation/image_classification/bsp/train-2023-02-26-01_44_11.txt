@@ -1,0 +1,9 @@
+Namespace(arch='convnext_base', batch_size=32, bottleneck_dim=256, data='Office31', epochs=20, iters_per_epoch=1000, log='bsp', lr=0.003, lr_decay=0.75, lr_gamma=0.001, momentum=0.9, no_hflip=False, no_pool=False, norm_mean=(0.485, 0.456, 0.406), norm_std=(0.229, 0.224, 0.225), per_class_eval=False, phase='train', pretrain=None, pretrain_epochs=3, pretrain_lr=0.001, print_freq=100, ratio=[0.75, 1.3333333333333333], resize_size=224, root='data/office31', scale=[0.08, 1.0], scratch=False, seed=None, source=['A'], target=['W'], trade_off=1.0, trade_off_bsp=0.0002, train_resizing='default', val_resizing='default', weight_decay=0.001, workers=2)
+=> using model 'convnext_base'
+Pretraining the model on source domain.
+Traceback (most recent call last):
+  File "cloth_bsp.py", line 461, in <module>
+    main(args)
+  File "cloth_bsp.py", line 250, in main
+    args.pretrain = logger.get_checkpoint_path('pretrain'+ device)
+TypeError: can only concatenate str (not "torch.device") to str

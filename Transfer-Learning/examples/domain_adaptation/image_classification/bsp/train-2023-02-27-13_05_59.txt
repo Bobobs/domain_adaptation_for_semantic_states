@@ -1,0 +1,32 @@
+Namespace(arch='convnext_base', batch_size=32, bottleneck_dim=256, data='Office31', epochs=20, iters_per_epoch=1000, log='bsp', lr=0.003, lr_decay=0.75, lr_gamma=0.001, momentum=0.9, no_hflip=False, no_pool=False, norm_mean=(0.485, 0.456, 0.406), norm_std=(0.229, 0.224, 0.225), per_class_eval=False, phase='train', pretrain=None, pretrain_epochs=3, pretrain_lr=0.001, print_freq=100, ratio=[0.75, 1.3333333333333333], resize_size=224, root='data/office31', scale=[0.08, 1.0], scratch=False, seed=None, source=['A'], target=['W'], trade_off=1.0, trade_off_bsp=0.0002, train_resizing='default', val_resizing='default', weight_decay=0.001, workers=2)
+=> using model 'convnext_base'
+Traceback (most recent call last):
+  File "cloth_bsp.py", line 461, in <module>
+    main(args)
+  File "cloth_bsp.py", line 206, in main
+    backbone = utils.get_model(args.arch, pretrain=not args.scratch)
+  File "/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py", line 41, in get_model
+    backbone = timm.create_model(model_name, pretrained=pretrain)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/timm/models/factory.py", line 71, in create_model
+    model = create_fn(pretrained=pretrained, pretrained_cfg=pretrained_cfg, **kwargs)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/timm/models/convnext.py", line 560, in convnext_base
+    model = _create_convnext('convnext_base', pretrained=pretrained, **model_args)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/timm/models/convnext.py", line 454, in _create_convnext
+    model = build_model_with_cfg(
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/timm/models/helpers.py", line 537, in build_model_with_cfg
+    model = model_cls(**kwargs) if model_cfg is None else model_cls(cfg=model_cfg, **kwargs)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/timm/models/convnext.py", line 337, in __init__
+    stages.append(ConvNeXtStage(
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/timm/models/convnext.py", line 230, in __init__
+    stage_blocks.append(ConvNeXtBlock(
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/timm/models/convnext.py", line 171, in __init__
+    self.mlp = mlp_layer(out_chs, int(mlp_ratio * out_chs), act_layer=act_layer)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/timm/models/layers/mlp.py", line 20, in __init__
+    self.fc1 = nn.Linear(in_features, hidden_features, bias=bias[0])
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 101, in __init__
+    self.reset_parameters()
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 107, in reset_parameters
+    init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/nn/init.py", line 412, in kaiming_uniform_
+    return tensor.uniform_(-bound, bound)
+KeyboardInterrupt

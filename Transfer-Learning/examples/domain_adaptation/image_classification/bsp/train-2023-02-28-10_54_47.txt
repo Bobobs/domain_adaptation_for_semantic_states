@@ -1,0 +1,61 @@
+Namespace(arch='convnext_base', batch_size=32, bottleneck_dim=256, data='Office31', epochs=20, iters_per_epoch=1000, log='bsp', lr=0.003, lr_decay=0.75, lr_gamma=0.001, momentum=0.9, no_hflip=False, no_pool=False, norm_mean=(0.485, 0.456, 0.406), norm_std=(0.229, 0.224, 0.225), per_class_eval=False, phase='train', pretrain=None, pretrain_epochs=3, pretrain_lr=0.001, print_freq=100, ratio=[0.75, 1.3333333333333333], resize_size=224, root='data/office31', scale=[0.08, 1.0], scratch=False, seed=None, source=['A'], target=['W'], trade_off=1.0, trade_off_bsp=0.0002, train_resizing='default', val_resizing='default', weight_decay=0.001, workers=2)
+=> using model 'convnext_base'
+/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py:136: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  top2, predicted2 = torch.topk(sm(output.data), 2, dim=1, largest=True, sorted=True)
+/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py:137: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  top3, predicted3 = torch.topk(sm(output.data), 3, dim=1, largest=True, sorted=True)
+/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py:138: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  top9, predicted9 = torch.topk(sm(output.data), 9, dim=1, largest=True, sorted=True)
+Test: [   0/6903]	Time  6.224 ( 6.224)	Loss 1.3947e+00 (1.3947e+00)	Acc@1   0.00 (  0.00)
+Test: [ 100/6903]	Time  0.029 ( 0.087)	Loss 3.0626e+00 (2.8265e+00)	Acc@1   0.00 (  0.00)
+Test: [ 200/6903]	Time  0.027 ( 0.057)	Loss 3.2839e+00 (3.0061e+00)	Acc@1   0.00 (  0.00)
+Test: [ 300/6903]	Time  0.029 ( 0.047)	Loss 2.3963e-02 (3.1684e+00)	Acc@1 100.00 (  0.33)
+Test: [ 400/6903]	Time  0.029 ( 0.041)	Loss 1.8789e-03 (2.3810e+00)	Acc@1 100.00 ( 25.19)
+Test: [ 500/6903]	Time  0.023 ( 0.038)	Loss 5.4233e-01 (1.9615e+00)	Acc@1 100.00 ( 39.72)
+Test: [ 600/6903]	Time  0.033 ( 0.036)	Loss 3.7725e+00 (1.8589e+00)	Acc@1   0.00 ( 44.59)
+Test: [ 700/6903]	Time  0.035 ( 0.036)	Loss 4.7003e-02 (1.6591e+00)	Acc@1 100.00 ( 50.78)
+Test: [ 800/6903]	Time  0.036 ( 0.035)	Loss 1.2038e-01 (1.5454e+00)	Acc@1 100.00 ( 53.68)
+Test: [ 900/6903]	Time  0.033 ( 0.034)	Loss 9.4048e-02 (1.3891e+00)	Acc@1 100.00 ( 58.82)
+Test: [1000/6903]	Time  0.026 ( 0.034)	Loss 1.6542e-01 (1.2600e+00)	Acc@1 100.00 ( 62.94)
+Test: [1100/6903]	Time  0.028 ( 0.033)	Loss 5.9677e+00 (1.3038e+00)	Acc@1   0.00 ( 61.40)
+Test: [1200/6903]	Time  0.027 ( 0.033)	Loss 5.5711e+00 (1.6508e+00)	Acc@1   0.00 ( 56.29)
+Test: [1300/6903]	Time  0.029 ( 0.032)	Loss 6.1104e+00 (1.9735e+00)	Acc@1   0.00 ( 51.96)
+Test: [1400/6903]	Time  0.027 ( 0.032)	Loss 4.3551e+00 (2.2022e+00)	Acc@1   0.00 ( 48.25)
+Test: [1500/6903]	Time  0.027 ( 0.031)	Loss 5.4390e+00 (2.3684e+00)	Acc@1   0.00 ( 45.04)
+Test: [1600/6903]	Time  0.026 ( 0.031)	Loss 4.7529e+00 (2.5452e+00)	Acc@1   0.00 ( 42.22)
+Test: [1700/6903]	Time  0.024 ( 0.031)	Loss 5.7281e+00 (2.6786e+00)	Acc@1   0.00 ( 39.74)
+Test: [1800/6903]	Time  0.023 ( 0.030)	Loss 5.8319e+00 (2.8388e+00)	Acc@1   0.00 ( 37.53)
+Test: [1900/6903]	Time  0.023 ( 0.030)	Loss 6.8919e+00 (3.0160e+00)	Acc@1   0.00 ( 35.56)
+Test: [2000/6903]	Time  0.017 ( 0.030)	Loss 6.0685e+00 (3.2011e+00)	Acc@1   0.00 ( 33.78)
+Test: [2100/6903]	Time  0.028 ( 0.030)	Loss 5.1243e-03 (3.3288e+00)	Acc@1 100.00 ( 32.46)
+Test: [2200/6903]	Time  0.042 ( 0.030)	Loss 8.1165e-03 (3.1779e+00)	Acc@1 100.00 ( 35.53)
+Traceback (most recent call last):
+  File "testing_bsp.py", line 477, in <module>
+    main(args)
+  File "testing_bsp.py", line 300, in main
+    acc1, predictions, predictions2, predictions3 , predictions4, predictions5, predictions6, predictions7, predictions8, predictions9= utils.validate(test_loader, classifier, args, device)
+  File "/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py", line 127, in validate
+    for i, data in enumerate(val_loader):
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1120, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/multiprocessing/queues.py", line 116, in get
+    return _ForkingPickler.loads(res)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/multiprocessing/reductions.py", line 305, in rebuild_storage_fd
+    fd = df.detach()
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/multiprocessing/resource_sharer.py", line 57, in detach
+    with _resource_sharer.get_connection(self._id) as conn:
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/multiprocessing/resource_sharer.py", line 88, in get_connection
+    c.send((key, os.getpid()))
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/multiprocessing/reduction.py", line 39, in __init__
+    super().__init__(*args)
+KeyboardInterrupt

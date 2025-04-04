@@ -1,0 +1,35 @@
+Namespace(arch='convnext_base', batch_size=32, bottleneck_dim=256, data='Office31', epochs=20, iters_per_epoch=1000, log='bsp', lr=0.003, lr_decay=0.75, lr_gamma=0.001, momentum=0.9, no_hflip=False, no_pool=False, norm_mean=(0.485, 0.456, 0.406), norm_std=(0.229, 0.224, 0.225), per_class_eval=False, phase='train', pretrain=None, pretrain_epochs=3, pretrain_lr=0.001, print_freq=100, ratio=[0.75, 1.3333333333333333], resize_size=224, root='data/office31', scale=[0.08, 1.0], scratch=False, seed=None, source=['A'], target=['W'], trade_off=1.0, trade_off_bsp=0.0002, train_resizing='default', val_resizing='default', weight_decay=0.001, workers=2)
+=> using model 'convnext_base'
+Pretraining the model on source domain.
+/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:257: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+lr: [0.0001, 0.001, 0.001]
+Epoch: [0][   0/1000]	Time 3.4 (3.4)	Data 0.0 (0.0)	Loss 2.43 (2.43)	Cls Acc 3.1 (3.1)
+Epoch: [0][ 100/1000]	Time 0.6 (0.7)	Data 0.0 (0.1)	Loss 1.10 (1.57)	Cls Acc 62.5 (46.2)
+Traceback (most recent call last):
+  File "cloth_bsp.py", line 461, in <module>
+    main(args)
+  File "cloth_bsp.py", line 262, in main
+    utils.empirical_risk_minimization(train_source_iter, pretrain_model, pretrain_optimizer,
+  File "/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py", line 286, in empirical_risk_minimization
+    x_s, labels_s = next(train_source_iter)[:2]
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/tllib-0.4-py3.8.egg/tllib/utils/data.py", line 50, in __next__
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1120, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/multiprocessing/queues.py", line 107, in get
+    if not self._poll(timeout):
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/multiprocessing/connection.py", line 257, in poll
+    return self._poll(timeout)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/multiprocessing/connection.py", line 424, in _poll
+    r = wait([self], timeout)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/multiprocessing/connection.py", line 931, in wait
+    ready = selector.select(timeout)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt

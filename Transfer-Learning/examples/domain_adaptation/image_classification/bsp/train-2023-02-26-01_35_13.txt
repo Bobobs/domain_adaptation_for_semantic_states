@@ -1,0 +1,26 @@
+Namespace(arch='convnext_base', batch_size=32, bottleneck_dim=256, data='Office31', epochs=20, iters_per_epoch=1000, log='bsp', lr=0.003, lr_decay=0.75, lr_gamma=0.001, momentum=0.9, no_hflip=False, no_pool=False, norm_mean=(0.485, 0.456, 0.406), norm_std=(0.229, 0.224, 0.225), per_class_eval=False, phase='train', pretrain=None, pretrain_epochs=3, pretrain_lr=0.001, print_freq=100, ratio=[0.75, 1.3333333333333333], resize_size=224, root='data/office31', scale=[0.08, 1.0], scratch=False, seed=None, source=['A'], target=['W'], trade_off=1.0, trade_off_bsp=0.0002, train_resizing='default', val_resizing='default', weight_decay=0.001, workers=2)
+=> using model 'convnext_base'
+Pretraining the model on source domain.
+/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:257: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+lr: [0.0001, 0.001, 0.001]
+Epoch: [0][   0/1000]	Time 3.0 (3.0)	Data 0.0 (0.0)	Loss 2.19 (2.19)	Cls Acc 6.2 (6.2)
+Epoch: [0][ 100/1000]	Time 0.8 (0.7)	Data 0.3 (0.2)	Loss 1.53 (1.54)	Cls Acc 37.5 (48.4)
+Epoch: [0][ 200/1000]	Time 0.8 (0.7)	Data 0.3 (0.1)	Loss 1.09 (1.31)	Cls Acc 75.0 (56.3)
+Epoch: [0][ 300/1000]	Time 0.8 (0.7)	Data 0.3 (0.1)	Loss 1.06 (1.17)	Cls Acc 65.6 (60.8)
+Epoch: [0][ 400/1000]	Time 0.6 (0.7)	Data 0.0 (0.1)	Loss 0.70 (1.09)	Cls Acc 81.2 (63.3)
+Epoch: [0][ 500/1000]	Time 0.6 (0.7)	Data 0.0 (0.1)	Loss 0.91 (1.04)	Cls Acc 68.8 (65.2)
+Epoch: [0][ 600/1000]	Time 0.8 (0.7)	Data 0.3 (0.1)	Loss 1.10 (1.00)	Cls Acc 65.6 (66.4)
+Epoch: [0][ 700/1000]	Time 0.8 (0.7)	Data 0.2 (0.1)	Loss 1.04 (0.96)	Cls Acc 56.2 (67.5)
+Traceback (most recent call last):
+  File "cloth_bsp.py", line 461, in <module>
+    main(args)
+  File "cloth_bsp.py", line 262, in main
+    utils.empirical_risk_minimization(train_source_iter, pretrain_model, pretrain_optimizer,
+  File "/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py", line 306, in empirical_risk_minimization
+    loss.backward()
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/autograd/__init__.py", line 197, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

@@ -1,0 +1,137 @@
+Namespace(arch='convnext_base', batch_size=32, bottleneck_dim=256, data='Office31', epochs=20, iters_per_epoch=1000, log='bsp', lr=0.003, lr_decay=0.75, lr_gamma=0.001, momentum=0.9, no_hflip=False, no_pool=False, norm_mean=(0.485, 0.456, 0.406), norm_std=(0.229, 0.224, 0.225), per_class_eval=False, phase='train', pretrain=None, pretrain_epochs=3, pretrain_lr=0.001, print_freq=100, ratio=[0.75, 1.3333333333333333], resize_size=224, root='data/office31', scale=[0.08, 1.0], scratch=False, seed=None, source=['A'], target=['W'], trade_off=1.0, trade_off_bsp=0.0002, train_resizing='default', val_resizing='default', weight_decay=0.001, workers=2)
+=> using model 'convnext_base'
+Pretraining the model on source domain.
+/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:257: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+lr: [0.0001, 0.001, 0.001]
+Epoch: [0][   0/1000]	Time 3.0 (3.0)	Data 0.0 (0.0)	Loss 2.17 (2.17)	Cls Acc 18.8 (18.8)
+Epoch: [0][ 100/1000]	Time 0.8 (0.7)	Data 0.2 (0.1)	Loss 1.29 (1.56)	Cls Acc 56.2 (47.2)
+Epoch: [0][ 200/1000]	Time 0.6 (0.7)	Data 0.0 (0.1)	Loss 0.74 (1.33)	Cls Acc 78.1 (55.0)
+Epoch: [0][ 300/1000]	Time 0.6 (0.7)	Data 0.0 (0.1)	Loss 0.71 (1.19)	Cls Acc 81.2 (59.8)
+Epoch: [0][ 400/1000]	Time 0.6 (0.7)	Data 0.0 (0.1)	Loss 0.61 (1.11)	Cls Acc 84.4 (62.5)
+Epoch: [0][ 500/1000]	Time 0.7 (0.7)	Data 0.0 (0.1)	Loss 0.89 (1.04)	Cls Acc 65.6 (64.7)
+Epoch: [0][ 600/1000]	Time 0.8 (0.7)	Data 0.1 (0.1)	Loss 0.66 (1.00)	Cls Acc 75.0 (66.0)
+Epoch: [0][ 700/1000]	Time 0.8 (0.7)	Data 0.1 (0.1)	Loss 0.71 (0.96)	Cls Acc 71.9 (67.2)
+Epoch: [0][ 800/1000]	Time 0.7 (0.7)	Data 0.0 (0.1)	Loss 0.58 (0.93)	Cls Acc 78.1 (68.1)
+Epoch: [0][ 900/1000]	Time 0.7 (0.7)	Data 0.0 (0.1)	Loss 0.60 (0.90)	Cls Acc 87.5 (69.0)
+/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py:136: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  top2, predicted2 = torch.topk(sm(output.data), 2, dim=1, largest=True, sorted=True)
+/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py:137: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  top3, predicted3 = torch.topk(sm(output.data), 3, dim=1, largest=True, sorted=True)
+/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/utils.py:138: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  top9, predicted9 = torch.topk(sm(output.data), 9, dim=1, largest=True, sorted=True)
+Test: [  0/295]	Time  1.237 ( 1.237)	Loss 4.7427e-01 (4.7427e-01)	Acc@1  87.50 ( 87.50)
+Test: [100/295]	Time  0.543 ( 0.369)	Loss 3.7264e-01 (3.9507e-01)	Acc@1  81.25 ( 91.03)
+Test: [200/295]	Time  0.546 ( 0.361)	Loss 4.0461e-01 (3.8997e-01)	Acc@1  87.50 ( 90.95)
+ * Acc@1 91.180
+lr: [5.946035575013605e-05, 0.0005946035575013605, 0.0005946035575013605]
+Epoch: [1][   0/1000]	Time 0.6 (0.6)	Data 0.0 (0.0)	Loss 0.62 (0.62)	Cls Acc 75.0 (75.0)
+Epoch: [1][ 100/1000]	Time 0.6 (0.7)	Data 0.0 (0.1)	Loss 0.53 (0.66)	Cls Acc 71.9 (76.7)
+Epoch: [1][ 200/1000]	Time 0.8 (0.7)	Data 0.2 (0.1)	Loss 0.52 (0.64)	Cls Acc 84.4 (77.4)
+Epoch: [1][ 300/1000]	Time 0.7 (0.7)	Data 0.1 (0.1)	Loss 0.80 (0.64)	Cls Acc 71.9 (77.2)
+Epoch: [1][ 400/1000]	Time 0.8 (0.7)	Data 0.1 (0.1)	Loss 0.65 (0.63)	Cls Acc 68.8 (77.3)
+Epoch: [1][ 500/1000]	Time 0.8 (0.7)	Data 0.2 (0.1)	Loss 0.84 (0.63)	Cls Acc 71.9 (77.4)
+Epoch: [1][ 600/1000]	Time 0.8 (0.7)	Data 0.2 (0.1)	Loss 0.50 (0.63)	Cls Acc 84.4 (77.4)
+Epoch: [1][ 700/1000]	Time 0.7 (0.7)	Data 0.1 (0.1)	Loss 0.50 (0.63)	Cls Acc 87.5 (77.4)
+Epoch: [1][ 800/1000]	Time 0.8 (0.7)	Data 0.2 (0.1)	Loss 0.84 (0.62)	Cls Acc 71.9 (77.5)
+Epoch: [1][ 900/1000]	Time 0.7 (0.7)	Data 0.1 (0.1)	Loss 0.34 (0.62)	Cls Acc 93.8 (77.6)
+Test: [  0/295]	Time  1.106 ( 1.106)	Loss 3.5277e-01 (3.5277e-01)	Acc@1  93.75 ( 93.75)
+Test: [100/295]	Time  0.493 ( 0.366)	Loss 3.7787e-01 (3.0467e-01)	Acc@1  81.25 ( 91.65)
+Test: [200/295]	Time  0.130 ( 0.357)	Loss 2.7809e-01 (3.0076e-01)	Acc@1  87.50 ( 91.60)
+ * Acc@1 91.838
+lr: [4.3869133765083086e-05, 0.0004386913376508308, 0.0004386913376508308]
+Epoch: [2][   0/1000]	Time 0.6 (0.6)	Data 0.0 (0.0)	Loss 0.45 (0.45)	Cls Acc 87.5 (87.5)
+Epoch: [2][ 100/1000]	Time 0.8 (0.7)	Data 0.2 (0.1)	Loss 0.57 (0.58)	Cls Acc 78.1 (79.0)
+Epoch: [2][ 200/1000]	Time 0.8 (0.7)	Data 0.1 (0.1)	Loss 0.56 (0.58)	Cls Acc 78.1 (78.8)
+Epoch: [2][ 300/1000]	Time 0.7 (0.7)	Data 0.1 (0.1)	Loss 0.49 (0.57)	Cls Acc 78.1 (79.2)
+Epoch: [2][ 400/1000]	Time 0.8 (0.7)	Data 0.2 (0.1)	Loss 0.24 (0.57)	Cls Acc 93.8 (79.2)
+Epoch: [2][ 500/1000]	Time 0.7 (0.7)	Data 0.1 (0.1)	Loss 0.68 (0.57)	Cls Acc 78.1 (79.2)
+Epoch: [2][ 600/1000]	Time 0.7 (0.7)	Data 0.1 (0.1)	Loss 0.39 (0.56)	Cls Acc 81.2 (79.4)
+Epoch: [2][ 700/1000]	Time 0.8 (0.7)	Data 0.1 (0.1)	Loss 0.48 (0.56)	Cls Acc 78.1 (79.5)
+Epoch: [2][ 800/1000]	Time 0.7 (0.7)	Data 0.1 (0.1)	Loss 0.60 (0.56)	Cls Acc 75.0 (79.4)
+Epoch: [2][ 900/1000]	Time 0.8 (0.7)	Data 0.1 (0.1)	Loss 0.80 (0.56)	Cls Acc 65.6 (79.4)
+Test: [  0/295]	Time  0.987 ( 0.987)	Loss 3.0325e-01 (3.0325e-01)	Acc@1  93.75 ( 93.75)
+Test: [100/295]	Time  0.671 ( 0.366)	Loss 3.4091e-01 (2.6278e-01)	Acc@1  81.25 ( 93.25)
+Test: [200/295]	Time  0.131 ( 0.359)	Loss 2.3875e-01 (2.6204e-01)	Acc@1  93.75 ( 93.10)
+ * Acc@1 93.241
+Pretraining process is done.
+after pretraining lr: 0.00030000000000000003
+Epoch: [0][   0/1000]	Time  3.55 ( 3.55)	Data  0.02 ( 0.02)	Loss   1.87 (  1.87)	Cls Acc 71.9 (71.9)	Domain Acc 42.2 (42.2)
+Epoch: [0][ 100/1000]	Time  1.40 ( 1.39)	Data  0.02 ( 0.02)	Loss   1.37 (  1.55)	Cls Acc 75.0 (76.9)	Domain Acc 92.2 (85.1)
+Epoch: [0][ 200/1000]	Time  1.43 ( 1.40)	Data  0.02 ( 0.02)	Loss   1.72 (  1.38)	Cls Acc 65.6 (77.2)	Domain Acc 96.9 (91.0)
+Epoch: [0][ 300/1000]	Time  1.41 ( 1.41)	Data  0.02 ( 0.02)	Loss   0.89 (  1.28)	Cls Acc 84.4 (77.7)	Domain Acc 98.4 (93.4)
+Epoch: [0][ 400/1000]	Time  1.43 ( 1.42)	Data  0.02 ( 0.02)	Loss   1.14 (  1.22)	Cls Acc 81.2 (78.1)	Domain Acc 89.1 (94.4)
+Epoch: [0][ 500/1000]	Time  1.44 ( 1.42)	Data  0.02 ( 0.02)	Loss   1.94 (  1.26)	Cls Acc 84.4 (78.3)	Domain Acc 71.9 (92.6)
+Epoch: [0][ 600/1000]	Time  1.44 ( 1.43)	Data  0.02 ( 0.03)	Loss   1.33 (  1.41)	Cls Acc 75.0 (77.8)	Domain Acc 90.6 (89.2)
+Epoch: [0][ 700/1000]	Time  1.44 ( 1.43)	Data  0.02 ( 0.02)	Loss   1.63 (  1.45)	Cls Acc 75.0 (77.6)	Domain Acc 64.1 (87.1)
+Epoch: [0][ 800/1000]	Time  1.42 ( 1.43)	Data  0.02 ( 0.03)	Loss   1.45 (  1.47)	Cls Acc 81.2 (77.5)	Domain Acc 78.1 (85.8)
+Epoch: [0][ 900/1000]	Time  1.44 ( 1.43)	Data  0.02 ( 0.03)	Loss   1.46 (  1.47)	Cls Acc 84.4 (77.6)	Domain Acc 78.1 (84.7)
+Test: [  0/295]	Time  1.055 ( 1.055)	Loss 4.4323e-01 (4.4323e-01)	Acc@1  87.50 ( 87.50)
+Test: [100/295]	Time  0.545 ( 0.370)	Loss 3.5373e-01 (3.4329e-01)	Acc@1  87.50 ( 89.73)
+Test: [200/295]	Time  0.209 ( 0.362)	Loss 2.9658e-01 (3.4491e-01)	Acc@1  93.75 ( 90.39)
+ * Acc@1 90.542
+after pretraining lr: 0.00017838106725040818
+Epoch: [1][   0/1000]	Time  1.31 ( 1.31)	Data  0.02 ( 0.02)	Loss   2.47 (  2.47)	Cls Acc 71.9 (71.9)	Domain Acc 50.0 (50.0)
+Epoch: [1][ 100/1000]	Time  1.40 ( 1.39)	Data  0.02 ( 0.04)	Loss   1.18 (  1.65)	Cls Acc 68.8 (77.4)	Domain Acc 93.8 (70.5)
+Epoch: [1][ 200/1000]	Time  1.42 ( 1.41)	Data  0.02 ( 0.04)	Loss   1.22 (  1.59)	Cls Acc 84.4 (77.3)	Domain Acc 78.1 (72.3)
+Epoch: [1][ 300/1000]	Time  1.42 ( 1.41)	Data  0.02 ( 0.03)	Loss   1.45 (  1.64)	Cls Acc 75.0 (76.9)	Domain Acc 71.9 (70.2)
+Epoch: [1][ 400/1000]	Time  1.42 ( 1.42)	Data  0.02 ( 0.03)	Loss   1.96 (  1.65)	Cls Acc 68.8 (77.1)	Domain Acc 59.4 (68.2)
+Epoch: [1][ 500/1000]	Time  1.42 ( 1.42)	Data  0.02 ( 0.03)	Loss   1.69 (  1.65)	Cls Acc 84.4 (77.0)	Domain Acc 48.4 (67.7)
+Epoch: [1][ 600/1000]	Time  1.40 ( 1.42)	Data  0.02 ( 0.03)	Loss   1.24 (  1.66)	Cls Acc 87.5 (76.8)	Domain Acc 75.0 (66.5)
+Epoch: [1][ 700/1000]	Time  1.42 ( 1.42)	Data  0.02 ( 0.03)	Loss   2.23 (  1.67)	Cls Acc 78.1 (76.5)	Domain Acc 31.2 (66.1)
+Epoch: [1][ 800/1000]	Time  1.42 ( 1.42)	Data  0.02 ( 0.03)	Loss   1.55 (  1.66)	Cls Acc 78.1 (76.5)	Domain Acc 73.4 (65.9)
+Epoch: [1][ 900/1000]	Time  1.42 ( 1.42)	Data  0.02 ( 0.03)	Loss   2.00 (  1.67)	Cls Acc 78.1 (76.3)	Domain Acc 50.0 (65.1)
+Test: [  0/295]	Time  1.056 ( 1.056)	Loss 3.7901e-01 (3.7901e-01)	Acc@1  87.50 ( 87.50)
+Test: [100/295]	Time  0.593 ( 0.369)	Loss 3.8285e-01 (2.6324e-01)	Acc@1  87.50 ( 93.56)
+Test: [200/295]	Time  0.572 ( 0.362)	Loss 2.3308e-01 (2.6071e-01)	Acc@1  93.75 ( 93.72)
+ * Acc@1 93.900
+after pretraining lr: 0.00013160740129524923
+Epoch: [2][   0/1000]	Time  1.31 ( 1.31)	Data  0.01 ( 0.01)	Loss   1.83 (  1.83)	Cls Acc 68.8 (68.8)	Domain Acc 53.1 (53.1)
+Epoch: [2][ 100/1000]	Time  1.40 ( 1.36)	Data  0.02 ( 0.02)	Loss   1.65 (  1.52)	Cls Acc 68.8 (77.4)	Domain Acc 64.1 (65.4)
+Epoch: [2][ 200/1000]	Time  1.42 ( 1.39)	Data  0.02 ( 0.03)	Loss   1.73 (  1.52)	Cls Acc 87.5 (77.2)	Domain Acc 50.0 (64.2)
+Epoch: [2][ 300/1000]	Time  1.42 ( 1.41)	Data  0.02 ( 0.03)	Loss   1.44 (  1.54)	Cls Acc 68.8 (77.6)	Domain Acc 68.8 (63.2)
+Epoch: [2][ 400/1000]	Time  1.44 ( 1.41)	Data  0.02 ( 0.03)	Loss   1.17 (  1.56)	Cls Acc 81.2 (77.5)	Domain Acc 89.1 (62.9)
+Epoch: [2][ 500/1000]	Time  1.40 ( 1.42)	Data  0.02 ( 0.03)	Loss   1.35 (  1.57)	Cls Acc 78.1 (77.3)	Domain Acc 90.6 (63.0)
+Epoch: [2][ 600/1000]	Time  1.45 ( 1.42)	Data  0.02 ( 0.03)	Loss   1.53 (  1.59)	Cls Acc 81.2 (77.1)	Domain Acc 67.2 (62.7)
+Epoch: [2][ 700/1000]	Time  1.40 ( 1.42)	Data  0.02 ( 0.03)	Loss   1.53 (  1.61)	Cls Acc 75.0 (77.0)	Domain Acc 73.4 (61.0)
+Traceback (most recent call last):
+  File "cloth_bsp.py", line 461, in <module>
+    main(args)
+  File "cloth_bsp.py", line 279, in main
+    train(train_source_iter, train_target_iter, classifier, domain_adv, bsp_penalty, optimizer,
+  File "cloth_bsp.py", line 329, in train
+    x_t, = next(train_target_iter)[:1]
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/tllib-0.4-py3.8.egg/tllib/utils/data.py", line 50, in __next__
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1333, in _next_data
+    return self._process_data(data)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1359, in _process_data
+    data.reraise()
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+FileNotFoundError: Caught FileNotFoundError in DataLoader worker process 1.
+Original Traceback (most recent call last):
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/tllib-0.4-py3.8.egg/tllib/utils/data.py", line 50, in __next__
+    data = next(self.iter)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1306, in _next_data
+    raise StopIteration
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 302, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "cloth_bsp.py", line 132, in __getitem__
+    img = Image.open(file)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/PIL/Image.py", line 3131, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/gtzelepis/cropped_UR/domain_train/diag_pink/diag_pink_0628.png'
+

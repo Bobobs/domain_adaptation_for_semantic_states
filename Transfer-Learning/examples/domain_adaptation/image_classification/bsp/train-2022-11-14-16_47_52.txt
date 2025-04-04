@@ -1,0 +1,89 @@
+Namespace(arch='convnext_base', batch_size=32, bottleneck_dim=256, data='Office31', epochs=20, iters_per_epoch=1000, log='bsp', lr=0.003, lr_decay=0.75, lr_gamma=0.001, momentum=0.9, no_hflip=False, no_pool=False, norm_mean=(0.485, 0.456, 0.406), norm_std=(0.229, 0.224, 0.225), per_class_eval=False, phase='train', pretrain=None, pretrain_epochs=3, pretrain_lr=0.001, print_freq=100, ratio=[0.75, 1.3333333333333333], resize_size=224, rho=0.05, root='data/office31', scale=[0.08, 1.0], scratch=False, seed=None, source=['A'], target=['W'], trade_off=1.0, trade_off_bsp=0.0002, train_resizing='default', val_resizing='default', weight_decay=0.001, workers=2)
+=> using model 'convnext_base'
+Downloading: "https://dl.fbaipublicfiles.com/convnext/convnext_base_1k_224_ema.pth" to /home/gtzelepis/.cache/torch/hub/checkpoints/convnext_base_1k_224_ema.pth
+Pretraining the model on source domain.
+/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:257: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+lr: [0.0001, 0.001, 0.001]
+Epoch: [0][   0/1000]	Time 3.0 (3.0)	Data 0.0 (0.0)	Loss 1.47 (1.47)	Cls Acc 28.1 (28.1)
+Epoch: [0][ 100/1000]	Time 0.8 (0.8)	Data 0.2 (0.2)	Loss 0.46 (0.80)	Cls Acc 87.5 (70.5)
+Epoch: [0][ 200/1000]	Time 0.8 (0.7)	Data 0.3 (0.2)	Loss 0.46 (0.64)	Cls Acc 81.2 (77.4)
+Epoch: [0][ 300/1000]	Time 0.8 (0.7)	Data 0.3 (0.2)	Loss 0.46 (0.57)	Cls Acc 81.2 (80.2)
+Epoch: [0][ 400/1000]	Time 0.8 (0.7)	Data 0.3 (0.2)	Loss 0.18 (0.52)	Cls Acc 96.9 (81.9)
+Epoch: [0][ 500/1000]	Time 0.8 (0.7)	Data 0.2 (0.1)	Loss 0.43 (0.49)	Cls Acc 90.6 (83.0)
+Epoch: [0][ 600/1000]	Time 0.6 (0.7)	Data 0.0 (0.1)	Loss 0.29 (0.46)	Cls Acc 90.6 (84.0)
+Epoch: [0][ 700/1000]	Time 0.8 (0.7)	Data 0.2 (0.1)	Loss 0.38 (0.44)	Cls Acc 84.4 (84.8)
+Epoch: [0][ 800/1000]	Time 0.9 (0.7)	Data 0.3 (0.1)	Loss 0.41 (0.43)	Cls Acc 87.5 (85.3)
+Epoch: [0][ 900/1000]	Time 0.8 (0.7)	Data 0.3 (0.1)	Loss 0.49 (0.41)	Cls Acc 84.4 (85.8)
+Test: [  0/111]	Time  1.202 ( 1.202)	Loss 4.4662e-01 (4.4662e-01)	Acc@1  87.50 ( 87.50)
+Test: [100/111]	Time  0.569 ( 0.363)	Loss 1.3295e-01 (1.7452e-01)	Acc@1  93.75 ( 95.05)
+ * Acc@1 95.362
+lr: [5.946035575013605e-05, 0.0005946035575013605, 0.0005946035575013605]
+Epoch: [1][   0/1000]	Time 0.6 (0.6)	Data 0.0 (0.0)	Loss 0.32 (0.32)	Cls Acc 84.4 (84.4)
+Epoch: [1][ 100/1000]	Time 2.2 (0.7)	Data 1.7 (0.1)	Loss 0.34 (0.30)	Cls Acc 84.4 (89.8)
+Epoch: [1][ 200/1000]	Time 0.9 (0.7)	Data 0.3 (0.1)	Loss 0.43 (0.30)	Cls Acc 87.5 (89.7)
+Epoch: [1][ 300/1000]	Time 0.8 (0.7)	Data 0.2 (0.1)	Loss 0.32 (0.29)	Cls Acc 87.5 (89.9)
+Epoch: [1][ 400/1000]	Time 0.7 (0.7)	Data 0.1 (0.1)	Loss 0.30 (0.29)	Cls Acc 90.6 (90.0)
+Epoch: [1][ 500/1000]	Time 0.7 (0.7)	Data 0.1 (0.1)	Loss 0.31 (0.28)	Cls Acc 84.4 (90.1)
+Epoch: [1][ 600/1000]	Time 0.8 (0.7)	Data 0.2 (0.1)	Loss 0.44 (0.28)	Cls Acc 78.1 (90.2)
+Epoch: [1][ 700/1000]	Time 0.8 (0.7)	Data 0.2 (0.1)	Loss 0.25 (0.28)	Cls Acc 93.8 (90.2)
+Epoch: [1][ 800/1000]	Time 0.7 (0.7)	Data 0.2 (0.1)	Loss 0.27 (0.28)	Cls Acc 93.8 (90.4)
+Epoch: [1][ 900/1000]	Time 0.7 (0.7)	Data 0.1 (0.1)	Loss 0.22 (0.27)	Cls Acc 87.5 (90.5)
+Test: [  0/111]	Time  1.032 ( 1.032)	Loss 2.7772e-01 (2.7772e-01)	Acc@1  87.50 ( 87.50)
+Test: [100/111]	Time  0.129 ( 0.349)	Loss 9.7419e-02 (1.3739e-01)	Acc@1  93.75 ( 95.67)
+ * Acc@1 95.871
+lr: [4.3869133765083086e-05, 0.0004386913376508308, 0.0004386913376508308]
+Epoch: [2][   0/1000]	Time 0.6 (0.6)	Data 0.0 (0.0)	Loss 0.27 (0.27)	Cls Acc 93.8 (93.8)
+Epoch: [2][ 100/1000]	Time 0.7 (0.7)	Data 0.2 (0.1)	Loss 0.24 (0.27)	Cls Acc 90.6 (90.1)
+Epoch: [2][ 200/1000]	Time 2.5 (0.7)	Data 1.9 (0.1)	Loss 0.30 (0.26)	Cls Acc 90.6 (90.8)
+Epoch: [2][ 300/1000]	Time 0.7 (0.7)	Data 0.1 (0.1)	Loss 0.26 (0.24)	Cls Acc 90.6 (91.3)
+Epoch: [2][ 400/1000]	Time 0.6 (0.7)	Data 0.0 (0.1)	Loss 0.16 (0.24)	Cls Acc 93.8 (91.3)
+Epoch: [2][ 500/1000]	Time 0.7 (0.7)	Data 0.2 (0.1)	Loss 0.11 (0.24)	Cls Acc 100.0 (91.3)
+Epoch: [2][ 600/1000]	Time 0.8 (0.7)	Data 0.2 (0.1)	Loss 0.34 (0.24)	Cls Acc 81.2 (91.3)
+Epoch: [2][ 700/1000]	Time 0.8 (0.7)	Data 0.3 (0.1)	Loss 0.14 (0.24)	Cls Acc 93.8 (91.4)
+Epoch: [2][ 800/1000]	Time 0.7 (0.7)	Data 0.2 (0.1)	Loss 0.25 (0.24)	Cls Acc 87.5 (91.3)
+Epoch: [2][ 900/1000]	Time 0.7 (0.7)	Data 0.2 (0.1)	Loss 0.27 (0.24)	Cls Acc 87.5 (91.4)
+Test: [  0/111]	Time  1.034 ( 1.034)	Loss 2.2297e-01 (2.2297e-01)	Acc@1  93.75 ( 93.75)
+Test: [100/111]	Time  0.670 ( 0.348)	Loss 9.9732e-02 (1.2526e-01)	Acc@1 100.00 ( 95.85)
+ * Acc@1 96.154
+Pretraining process is done.
+after pretraining lr: 0.00030000000000000003
+/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:138: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn("Detected call of `lr_scheduler.step()` before `optimizer.step()`. "
+Epoch: [0][   0/1000]	Time  4.96 ( 4.96)	Data  0.03 ( 0.03)	Loss   1.81 (  1.81)	Cls Acc 84.4 (84.4)	Domain Acc 45.3 (45.3)
+Epoch: [0][ 100/1000]	Time  2.56 ( 2.60)	Data  0.02 ( 0.04)	Loss   1.27 (  1.47)	Cls Acc 81.2 (80.5)	Domain Acc 85.9 (85.2)
+Epoch: [0][ 200/1000]	Time  2.55 ( 2.58)	Data  0.02 ( 0.03)	Loss   1.08 (  1.29)	Cls Acc 84.4 (81.7)	Domain Acc 95.3 (89.7)
+Epoch: [0][ 300/1000]	Time  4.19 ( 2.58)	Data  1.66 ( 0.03)	Loss   1.09 (  1.19)	Cls Acc 81.2 (82.4)	Domain Acc 95.3 (92.1)
+Epoch: [0][ 400/1000]	Time  2.56 ( 2.57)	Data  0.02 ( 0.03)	Loss   1.10 (  1.15)	Cls Acc 81.2 (82.9)	Domain Acc 84.4 (92.1)
+Epoch: [0][ 500/1000]	Time  2.56 ( 2.57)	Data  0.02 ( 0.03)	Loss   1.22 (  1.16)	Cls Acc 78.1 (83.2)	Domain Acc 82.8 (90.6)
+Epoch: [0][ 600/1000]	Time  2.56 ( 2.57)	Data  0.03 ( 0.03)	Loss   1.54 (  1.21)	Cls Acc 87.5 (83.3)	Domain Acc 64.1 (88.2)
+Epoch: [0][ 700/1000]	Time  2.56 ( 2.57)	Data  0.02 ( 0.03)	Loss   1.21 (  1.22)	Cls Acc 78.1 (83.5)	Domain Acc 87.5 (86.6)
+Epoch: [0][ 800/1000]	Time  2.54 ( 2.57)	Data  0.02 ( 0.03)	Loss   1.75 (  1.22)	Cls Acc 87.5 (83.7)	Domain Acc 46.9 (85.3)
+Epoch: [0][ 900/1000]	Time  2.56 ( 2.57)	Data  0.02 ( 0.03)	Loss   1.64 (  1.23)	Cls Acc 78.1 (83.5)	Domain Acc 54.7 (84.0)
+Test: [  0/111]	Time  0.944 ( 0.944)	Loss 2.8646e-01 (2.8646e-01)	Acc@1  87.50 ( 87.50)
+Test: [100/111]	Time  0.524 ( 0.346)	Loss 1.5863e-01 (1.5574e-01)	Acc@1  93.75 ( 95.48)
+ * Acc@1 95.758
+after pretraining lr: 0.00017838106725040818
+Epoch: [1][   0/1000]	Time  2.52 ( 2.52)	Data  0.01 ( 0.01)	Loss   1.65 (  1.65)	Cls Acc 71.9 (71.9)	Domain Acc 65.6 (65.6)
+Traceback (most recent call last):
+  File "cloth_bsp.py", line 460, in <module>
+    main(args)
+  File "cloth_bsp.py", line 280, in main
+    train(train_source_iter, train_target_iter, classifier, domain_adv, bsp_penalty, optimizer, ad_optimizer,
+  File "cloth_bsp.py", line 372, in train
+    optimizer.second_step(zero_grad=True)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/gtzelepis/Transfer-Learning-Library/examples/domain_adaptation/image_classification/common/utils/sam.py", line 36, in second_step
+    self.base_optimizer.step()  # do the actual "sharpness-aware" update
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/optim/optimizer.py", line 140, in wrapper
+    out = func(*args, **kwargs)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/optim/optimizer.py", line 23, in _use_grad
+    ret = func(self, *args, **kwargs)
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/optim/sgd.py", line 151, in step
+    sgd(params_with_grad,
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/optim/sgd.py", line 202, in sgd
+    func(params,
+  File "/home/gtzelepis/miniconda3/envs/domain_adaptation/lib/python3.8/site-packages/torch/optim/sgd.py", line 238, in _single_tensor_sgd
+    buf.mul_(momentum).add_(d_p, alpha=1 - dampening)
+KeyboardInterrupt
